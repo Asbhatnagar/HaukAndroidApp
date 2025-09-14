@@ -57,7 +57,7 @@
     <string name="req_perms_title">Berechtigung benötigt</string>
     <string name="err_location_disabled">Standortdienste sind deaktiviert. Bitte aktivieren Sie die präzisen Ortungsdienste, um Ihren Standort zu teilen.</string>
     <string name="create_link_title">Neuen Freigabelink erstellen</string>
-    <string name="err_ver_group">Der Server unterstützt keine Gruppenfreigaben. Gruppenfreigaben werden ab Version %s unterstützt; auf dem Server läuft derzeit die Version %s. Deine Freigabe wurde in eine individuelle Freigabe umgewandelt.</string>
+    <string name="err_ver_group" formatted="false">Der Server unterstützt keine Gruppenfreigaben. Gruppenfreigaben werden ab Version %s unterstützt; auf dem Server läuft derzeit die Version %s. Deine Freigabe wurde in eine individuelle Freigabe umgewandelt.</string>
     <string name="btn_ok">OK</string>
     <string name="btn_cancel">Abbrechen</string>
     <string name="btn_yes">Ja</string>
@@ -75,12 +75,12 @@
     <string name="progress_new_link_title">Link erstellen</string>
     <string name="progress_new_link_body">Neuen Freigabelink erstellen…</string>
     <string name="err_client">Falsche Einstellungen</string>
-    <string name="resume_body">Du hast eine unvollendete Sitzung:
-\n
-\nAktive Freigabelinks: %d
-\nAblaufdatum: %s
-\n
-\nMöchten Sie diese Sitzung wieder aufnehmen\?</string>
+    <string name="resume_body" formatted="false">Du hast eine unvollendete Sitzung:
+
+Aktive Freigabelinks: %d
+Ablaufdatum: %s
+
+Möchten Sie diese Sitzung wieder aufnehmen?</string>
     <string name="explain_adopt_body">Hauk ermöglicht es, Location-Sharing-Sitzungen sowohl für sich selbst als auch für eine Gruppe von Personen zu erstellen. Wenn jemand eine Gruppenfreigabe erstellt, erhält er einen Gruppencode, mit dem andere an der Freigabesitzung teilnehmen können.
 \n
 \nDie Person, die die Gruppenfreigabe erstellt, erhält jedoch auch die Möglichkeit, eine bereits vorhandene Standortfreigabe in ihre Gruppe aufzunehmen. Dieser Prozess wird als Adoption bezeichnet.
@@ -116,7 +116,7 @@
     <string name="password_mask">Zum Bearbeiten tippen</string>
     <string name="prefs_header_connection">Verbindung</string>
     <string name="title_activity_settings">Einstellungen</string>
-    <string name="err_ver_e2e">Der Server unterstützt keine End-to-End-Verschlüsselung. Die End-to-End-Verschlüsselung wird ab Version %s und höher unterstützt; auf dem Server läuft derzeit Version %s. Die Freigabe wird ohne End-to-End-Verschlüsselung erstellt, um Kompatibilität zu gewährleisten.</string>
+    <string name="err_ver_e2e" formatted="false">Der Server unterstützt keine End-to-End-Verschlüsselung. Die End-to-End-Verschlüsselung wird ab Version %s und höher unterstützt; auf dem Server läuft derzeit Version %s. Die Freigabe wird ohne End-to-End-Verschlüsselung erstellt, um Kompatibilität zu gewährleisten.</string>
     <string name="label_status_disconnected">Der Backend-Server kann nicht erreicht werden</string>
     <string name="pref_e2ePassword_title">Verschlüsselungspasswort</string>
     <string name="pref_enableE2E_title">Passwortgeschützte Freigabe</string>

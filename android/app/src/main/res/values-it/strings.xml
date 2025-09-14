@@ -14,12 +14,12 @@
     <string name="adopted_title">Condivisione adottata</string>
     <string name="adopted_body">%s è stato/a aggiunto/a alla tua condivisione!</string>
     <string name="resume_title">Ripristina sessione</string>
-    <string name="resume_body">Hai una sessione in corso:
-\n
-\nLink di condivisione attivo/i: %d
-\nScadenza: %s
-\n
-\nVuoi ripristinare la sessione\?</string>
+    <string name="resume_body" formatted="false">Hai una sessione in corso:
+
+Link di condivisione attivo/i: %d
+Scadenza: %s
+
+Vuoi ripristinare la sessione?</string>
     <string name="link_added_title">Indirizzo creato</string>
     <string name="req_perms_title">Permessi richiesti</string>
     <string name="battery_savings_title">Risparmio energetico aggressivo</string>
@@ -83,8 +83,8 @@
 \nQualunque link aggiuntivo da te creato in questo modo sarà una condivisione da utente singolo che mostrerà solo la tua posizione.</string>
     <string name="err_server_not_configured">Non hai ancora configurato un server di supporto. Compila i dettagli del tuo server di supporto nelle impostazioni e riprova.</string>
     <string name="err_empty">Il server ha restituito una risposta vuota.</string>
-    <string name="err_ver_group">Il server non supporta condivisioni di gruppo. Le condivisioni di gruppo sono supportate dalla versione %s e successive; il server sta utilizzando la versione %s. La condivisione è stata convertita in condivisione individuale.</string>
-    <string name="err_ver_e2e">"Il server non supporta la crittografia end-to-end.  La crittografia end-to-end è supportata dalla versione %s e successive; il server sta utilizzando la versione %s. La condivisione verrà creata senza crittografia end-to-end al fine di mantenere la compatibilità."</string>
+    <string name="err_ver_group" formatted="false">Il server non supporta condivisioni di gruppo. Le condivisioni di gruppo sono supportate dalla versione %s e successive; il server sta utilizzando la versione %s. La condivisione è stata convertita in condivisione individuale.</string>
+    <string name="err_ver_e2e" formatted="false">Il server non supporta la crittografia end-to-end.  La crittografia end-to-end è supportata dalla versione %s e successive; il server sta utilizzando la versione %s. La condivisione verrà creata senza crittografia end-to-end al fine di mantenere la compatibilità.</string>
     <string name="action_settings">Impostazioni</string>
     <string name="label_nickname">Nome utente:</string>
     <string name="label_heading">Condivisione posizione open source</string>

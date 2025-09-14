@@ -22,6 +22,7 @@ abstract class RepeatingUIThreadTaskExecutor {
      * Timer that repeatedly posts to the handler.
      */
     private Timer timer = null;
+    private long currentInterval; // Store interval for rescheduling
 
     /**
      * Called from the UI thread on every tick of the timer.
@@ -41,8 +42,13 @@ abstract class RepeatingUIThreadTaskExecutor {
      */
     @SuppressWarnings("SameParameterValue") // to ensure future extensibility
     final void start(long delay, long interval) {
+        if (this.timer != null) { // Stop any existing timer first
+            this.timer.cancel();
+            this.timer.purge();
+        }
         this.timer = new Timer();
-        this.timer.scheduleAtFixedRate(new RepeatingTask(), delay, interval);
+        this.currentInterval = interval; // Store the interval
+        this.timer.schedule(new RepeatingTask(this.currentInterval), delay); // Schedule first run
     }
 
     /**
@@ -60,9 +66,27 @@ abstract class RepeatingUIThreadTaskExecutor {
      * The timer task that is executed by the timer.
      */
     private final class RepeatingTask extends TimerTask {
+        private final long taskInterval;
+
+        RepeatingTask(long interval) {
+            this.taskInterval = interval;
+        }
+
         @Override
         public void run() {
+            // Post the task to be run on the UI thread
             RepeatingUIThreadTaskExecutor.this.handler.post(new Task());
+
+            // Reschedule if the timer hasn't been stopped
+            synchronized (RepeatingUIThreadTaskExecutor.this) {
+                if (RepeatingUIThreadTaskExecutor.this.timer != null) {
+                    try {
+                        RepeatingUIThreadTaskExecutor.this.timer.schedule(new RepeatingTask(this.taskInterval), this.taskInterval);
+                    } catch (IllegalStateException e) {
+                        // Timer was cancelled or purged concurrently, which is fine.
+                    }
+                }
+            }
         }
     }
 
@@ -72,7 +96,12 @@ abstract class RepeatingUIThreadTaskExecutor {
     private final class Task implements Runnable {
         @Override
         public void run() {
-            onTick();
+            // Only run if the timer is still active (not stopped)
+            // This check helps prevent onTick from running after stop() has been called,
+            // especially if there was a pending post in the Handler queue.
+            if (RepeatingUIThreadTaskExecutor.this.timer != null) {
+                onTick();
+            }
         }
     }
 }

@@ -67,7 +67,7 @@
 \nHvis du aktiverer dette og deler posisjonen din med en gjeng med venner, og noen andre i gjengen også ønsker å dele posisjonen sin, kan de opprette en delingsgruppe og legge deg til på kartet sitt, slik at dere begge dukker opp på samme kart. Dette kan være nyttig hvis du f.eks. kjører bil og ikke kan bruke telefonen din, siden adopsjon av den delte posisjonen din av andre ikke krever noen handling fra deg.</string>
     <string name="err_location_disabled">Stedstjenester er deaktivert. Vennligst aktiver høynøyaktighetsposisjonstjenester for å dele posisjonen din.</string>
     <string name="err_outdated">Serveren er utdatert</string>
-    <string name="err_ver_group">Serveren støtter ikke delingsgrupper. Delingsgrupper støttes i versjon %s og høyere; serveren kjører nå versjon %s. Delingen din ble omgjort til en én-persons-sesjon.</string>
+    <string name="err_ver_group" formatted="false">Serveren støtter ikke delingsgrupper. Delingsgrupper støttes i versjon %s og høyere; serveren kjører nå versjon %s. Delingen din ble omgjort til en én-persons-sesjon.</string>
     <string name="ok_title">Oppkobling vellykket</string>
     <string name="ok_message">Posisjonen din blir delt! Klikk på del-knappen for å kopiere visningslinken for delingen din.</string>
     <string name="ended_title">Deling avsluttet</string>
@@ -75,12 +75,12 @@
     <string name="adopted_title">Deling adoptert</string>
     <string name="adopted_body">%s ble lagt til i gruppen din!</string>
     <string name="resume_title">Gjenoppta sesjon</string>
-    <string name="resume_body">Du har en påbegynt sesjon som ikke er avsluttet:
-\n
-\nAktive linker: %d
-\nUtløper: %s
-\n
-\nØnsker du å gjenoppta denne sesjonen\?</string>
+    <string name="resume_body" formatted="false">Du har en påbegynt sesjon som ikke er avsluttet:
+
+Aktive linker: %d
+Utløper: %s
+
+Ønsker du å gjenoppta denne sesjonen?</string>
     <string name="link_added_title">Link opprettet</string>
     <string name="link_added_body">En ny link ble opprettet for den delte posisjonen din! Klikk på del-knappen for å kopiere visningslinken for den nye delingen din.</string>
     <string name="req_perms_title">Tilgang kreves</string>
@@ -111,7 +111,7 @@
     <string name="pref_requestLink_title">Foretrukket link-ID</string>
     <string name="pref_cryptUsername_hint">&lt;valgfritt&gt;</string>
     <string name="pref_cryptUsername_title">Brukernavn</string>
-    <string name="err_ver_e2e">Serveren støtter ikke ende-til-ende-kryptering. Ende-til-ende-kryptering støttes i versjon %s og høyere; serveren kjører nå versjon %s. Delingen din vil bli opprettet uten ende-til-ende-kryptering for å beholde kompatibilitet.</string>
+    <string name="err_ver_e2e" formatted="false">Serveren støtter ikke ende-til-ende-kryptering. Ende-til-ende-kryptering støttes i versjon %s og høyere; serveren kjører nå versjon %s. Delingen din vil bli opprettet uten ende-til-ende-kryptering for å beholde kompatibilitet.</string>
     <string name="pref_e2ePassword_title">Krypteringspassord</string>
     <string name="pref_enableE2E_on">Aktiver ende-til-ende-kryptering</string>
     <string name="pref_enableE2E_title">Krev passord for deling</string>

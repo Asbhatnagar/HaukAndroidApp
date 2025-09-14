@@ -63,12 +63,12 @@
     <string name="adopted_body">%s a fost adăugat(ă) la partajarea dumneavoastră!</string>
     <string name="resume_title">Reia sesiunea</string>
     <string name="link_added_title">Adresă creată</string>
-    <string name="resume_body">Aveți o sesiune neterminată:
-\n
-\nAdrese active de partajare: %d
-\nExpiră: %s
-\n
-\nDoriți să reluați această sesiune\?</string>
+    <string name="resume_body" formatted="false">Aveți o sesiune neterminată:
+
+Adrese active de partajare: %d
+Expiră: %s
+
+Doriți să reluați această sesiune?</string>
     <string name="req_perms_title">Permisiune necesară</string>
     <string name="battery_savings_title">Economisirea agresivă a bateriei</string>
     <string name="manufacturer_oneplus">OnePlus</string>
@@ -99,8 +99,8 @@
     <string name="progress_connect_body">Conectare la Hauk…</string>
     <string name="err_malformed_url">Adresa introdusă pentru server este invalidă.</string>
     <string name="err_location_disabled">Serviciile de localizare sunt dezactivate. Vă rugăm să activați serviciile de localizare cu precizie înaltă pentru a vă putea partaja locația.</string>
-    <string name="err_ver_group">Serverul nu suportă partajări în grup. Partajările în grup sunt suportate de versiunea %s sau mai nouă; serverul rulează versiunea %s. Partajarea dumneavoastră a fost convertită într-una individuală.</string>
-    <string name="err_ver_e2e">Serverul nu suportă criptarea partajării. Partajările criptate sunt suportate de versiunea %s sau mai nouă; serverul rulează versiunea %s. Partajarea dumneavoastră va fi creată fără criptare pentru a păstra compatibilitatea.</string>
+    <string name="err_ver_group" formatted="false">Serverul nu suportă partajări în grup. Partajările în grup sunt suportate de versiunea %s sau mai nouă; serverul rulează versiunea %s. Partajarea dumneavoastră a fost convertită într-una individuală.</string>
+    <string name="err_ver_e2e" formatted="false">Serverul nu suportă criptarea partajării. Partajările criptate sunt suportate de versiunea %s sau mai nouă; serverul rulează versiunea %s. Partajarea dumneavoastră va fi creată fără criptare pentru a păstra compatibilitatea.</string>
     <string name="link_added_body">O noua adresă a fost creată cu succes pentru locația dumneavoastră partajată! Atingeți butonul de partajare pentru a copia noua adresă vizibilă public.</string>
     <string name="req_perms_message">Această aplicație necesită acces la locația dumneavoastră pentru a funcționa, dar acestă permisiune nu a fost încă acordată. Vă rugăm să aprobați următoarea solicitare de permisiune, apoi apăsați din nou butonul de pornire pentru a reîncerca.</string>
     <string name="battery_savings_body">Se pare că utilizați un dispozitiv %s. Acestea au setări deosebit de stricte în privința economisirii bateriei care pot împiedica Hauk să trimită actualizări ale locației cât timp este în fundal. 

@@ -92,8 +92,8 @@
         <string name="err_empty">The server returned an empty response.</string>
         <string name="err_response_code">Received HTTP %s from server!</string>
     <string name="err_outdated">Server is out of date</string>
-        <string name="err_ver_group">The server does not support group shares. Group shares are supported in version %s and above; the server is currently running version %s. Your share has been converted to an individual share.</string>
-        <string name="err_ver_e2e">The server does not support end-to-end encryption. End-to-end encryption is supported in version %s and above; the server is currently running version %s. Your share will be created without end-to-end encryption to maintain compatibility.</string>
+        <string name="err_ver_group" formatted="false">The server does not support group shares. Group shares are supported in version %s and above; the server is currently running version %s. Your share has been converted to an individual share.</string>
+        <string name="err_ver_e2e" formatted="false">The server does not support end-to-end encryption. End-to-end encryption is supported in version %s and above; the server is currently running version %s. Your share will be created without end-to-end encryption to maintain compatibility.</string>
 
     <string name="ok_title">Connection established</string>
     <string name="ok_message">Location sharing is active! Click the share button to copy the publicly viewable URL for your share.</string>
@@ -102,7 +102,7 @@
     <string name="adopted_title">Share adopted</string>
     <string name="adopted_body">%s has been added to your share!</string>
     <string name="resume_title">Resume session</string>
-    <string name="resume_body">You have an unfinished session:\n\nActive sharing link(s): %d\nExpires: %s\n\nDo you wish to resume this session?</string>
+    <string name="resume_body" formatted="false">You have an unfinished session:\n\nActive sharing link(s): %d\nExpires: %s\n\nDo you wish to resume this session?</string>
     <string name="link_added_title">Link created</string>
     <string name="link_added_body">A new link was successfully created for your shared location! Click the share button to copy the publicly viewable URL for your new share.</string>
 

@@ -56,7 +56,7 @@
     <string name="err_empty">Serveren returnerte ein tom respons.</string>
     <string name="err_response_code">Mottok HTTP %s frå serveren!</string>
     <string name="err_outdated">Serveren er utdatert</string>
-    <string name="err_ver_group">Serveren støttar ikkje delingsgrupper. Delingsgrupper er støtta i versjon %s og høgare; serveren køyrer no versjon %s. Delingen din vart omgjort til ein ein-persons-sesjon.</string>
+    <string name="err_ver_group" formatted="false">Serveren støttar ikkje delingsgrupper. Delingsgrupper er støtta i versjon %s og høgare; serveren køyrer no versjon %s. Delingen din vart omgjort til ein ein-persons-sesjon.</string>
     <string name="ok_title">Oppkopling vellykka</string>
     <string name="ok_message">Posisjonen din blir delt! Klikk på del-knappen for å kopiera visningslinken for delingen din.</string>
     <string name="ended_title">Deling avslutta</string>
@@ -64,12 +64,12 @@
     <string name="adopted_title">Deling adoptert</string>
     <string name="adopted_body">%s vart lagt til i gruppa di!</string>
     <string name="resume_title">Gjenoppta sesjon</string>
-    <string name="resume_body">Du har ein påbyrja sesjon som ikkje er avslutta: 
-\n 
-\nAktive linkar: %d
-\nGår ut: %s
-\n 
-\nØnsker du å gjenoppta denne sesjonen\?</string>
+    <string name="resume_body" formatted="false">Du har ein påbyrja sesjon som ikkje er avslutta:
+
+Aktive linkar: %d
+Går ut: %s
+
+Ønsker du å gjenoppta denne sesjonen?</string>
     <string name="link_added_title">Link oppretta</string>
     <string name="link_added_body">Ein ny link vart oppretta for den delte posisjonen din! Klikk på del-knappen for å kopiera visningslinken for den nye delingen din.</string>
     <string name="req_perms_title">Tilgang krevjast</string>
@@ -111,7 +111,7 @@
     <string name="pref_requestLink_title">Føretrekt link-ID</string>
     <string name="pref_cryptUsername_hint">&lt;valfritt&gt;</string>
     <string name="pref_cryptUsername_title">Brukarnamn</string>
-    <string name="err_ver_e2e">Serveren støttar ikkje ende-til-ende-kryptering. Ende-til-ende-kryptering er støtta i versjon %s og høgare; serveren køyrer no versjon %s. Delingen din vil bli oppretta utan ende-til-ende-kryptering for å behalda kompatibilitet.</string>
+    <string name="err_ver_e2e" formatted="false">Serveren støttar ikkje ende-til-ende-kryptering. Ende-til-ende-kryptering er støtta i versjon %s og høgare; serveren køyrer no versjon %s. Delingen din vil bli oppretta utan ende-til-ende-kryptering for å behalda kompatibilitet.</string>
     <string name="pref_e2ePassword_title">Krypteringspassord</string>
     <string name="pref_enableE2E_on">Aktiver ende-til-ende-kryptering</string>
     <string name="pref_enableE2E_title">Krev passord for delingar</string>

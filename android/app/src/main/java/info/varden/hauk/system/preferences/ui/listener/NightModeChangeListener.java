@@ -19,7 +19,7 @@ public final class NightModeChangeListener implements Preference.OnPreferenceCha
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         try {
             // Resolve the night mode (an instance of NightModeStyle is required for this).
-            int mode = IndexedEnum.fromIndex(NightModeStyle.class, Integer.valueOf((String) newValue)).resolve();
+            @AppCompatDelegate.NightMode int mode = IndexedEnum.fromIndex(NightModeStyle.class, Integer.valueOf((String) newValue)).getResolvedNightModeValue();
             Log.i("Setting night mode %s", mode); //NON-NLS
             AppCompatDelegate.setDefaultNightMode(mode);
             return true;

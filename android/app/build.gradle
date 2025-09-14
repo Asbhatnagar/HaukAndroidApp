@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android' // Apply Kotlin plugin
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 36
     defaultConfig {
         applicationId "info.varden.hauk"
-        minSdkVersion 24
-        targetSdkVersion 33
+        minSdkVersion 26
+        targetSdkVersion 36
         versionCode 14
         versionName "1.6.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -17,14 +18,31 @@ android {
         }
     }
     namespace 'info.varden.hauk'
+    buildFeatures { // Add this block
+        buildConfig true
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Add Kotlin stdlib
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.preference:preference-ktx:1.2.1' // Added preference library
+
+    // Unit testing dependencies
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test:runner:1.5.2'
+    testImplementation 'org.hamcrest:hamcrest-library:3.0'
+
+    // Android Instrumentation testing dependencies (existing)
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 }

@@ -2,7 +2,7 @@
 <resources>
     <string name="err_response_code">HTTP %s ontvangen van server!</string>
     <string name="label_pin_help">Deel deze PIN met anderen in uw groep zodat zij uw locatie kunnen volgen</string>
-    <string name="err_ver_group">De server ondersteund geen groepsdelingen. Groepsdelingen zijn ondersteund vanaf versie %s; de server draait op dit moment versie %s. Uw locatiedeling is omgezet in een individuele deling.</string>
+    <string name="err_ver_group" formatted="false">De server ondersteund geen groepsdelingen. Groepsdelingen zijn ondersteund vanaf versie %s; de server draait op dit moment versie %s. Uw locatiedeling is omgezet in een individuele deling.</string>
     <string name="label_heading">Open source locatie deling</string>
     <string name="pref_cryptServer_title">Server URL</string>
     <string name="pref_cryptPassword_title">Wachtwoord</string>
@@ -89,7 +89,7 @@
     <string name="action_copied">Hauk link gekopieerd</string>
     <string name="ok_message">Locatie delen is actief! Klik de deel knop om de publieke URL van uw locatiedeling te kopiëren.</string>
     <string name="progress_connect_title">Verbinden</string>
-    <string name="resume_body">U heeft een onafgemaakte sessie:
+    <string name="resume_body" formatted="false">U heeft een onafgemaakte sessie:
 \n
 \nActieve deel links: %d
 \nVerloopt op: %s
@@ -136,7 +136,7 @@
     <string name="pref_cryptUsername_title">Gebruikersnaam</string>
     <string name="password_mask">Klik om te bewerken</string>
     <string name="prefs_header_connection">Verbindingen</string>
-    <string name="err_ver_e2e">De server ondersteunt geen end-to-end encryptie. End-to-end encryptie is ondersteund in versie %s en verder; de server draait momenteel versie %s. Uw locatiedeling zal gecreëerd worden zonder end-to-end encryptie om compatibiliteit te behouden.</string>
+    <string name="err_ver_e2e" formatted="false">De server ondersteund geen end-to-end-encryptie. End-to-end-encryptie is ondersteund vanaf versie %s; de server draait op dit moment versie %s. Uw deling zal zonder end-to-end-encryptie aangemaakt worden om compatibiliteit te behouden.</string>
     <string name="err_proxy_host_resolution">Het IP-adres van de ingestelde proxy (%s) Kon niet gevonden worden!</string>
     <string name="err_proxy_failure">Er is een fout opgetreden bij het oplossen van de hostnaam van de ingestelde proxy: %s</string>
     <string name="err_server_not_configured">U heeft nog geen backend ingesteld. Vul alstublieft de details voor uw backend server in via de instellingen en probeer het opnieuw.</string>

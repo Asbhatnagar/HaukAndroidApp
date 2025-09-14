@@ -81,12 +81,12 @@
     <string name="authorize_question">Souhaitez-vous permettre les sessions d\'être créées à partir de broadcast ayant cette identité dans le futur \?</string>
     <string name="adopted_body">%s a été ajouté à votre partage !</string>
     <string name="resume_title">Reprendre la session</string>
-    <string name="resume_body">Vous avez une session en cours:
-\n
-\nLien(s) de partage actif(s): %d
-\nExpirés : %s
-\n
-\nSouhaitez-vous reprendre cette session \?</string>
+    <string name="resume_body" formatted="false">Vous avez une session en cours:
+
+Lien(s) de partage actif(s): %d
+Expirés : %s
+
+Souhaitez-vous reprendre cette session ?</string>
     <string name="link_added_title">Lien créé</string>
     <string name="req_perms_title">Nécessite permission</string>
     <string name="req_perms_message">Cette app nécessite votre localisation pour fonctionner, mais cette permission n\'a pas encore été donnée. Veuillez donner la requête de permission suivante, puis cliquez le bouton démarrer pour recommencer.</string>
@@ -97,7 +97,7 @@
     <string name="progress_new_link_body">Création d\'un nouveau lien de partage…</string>
     <string name="err_missing_perms">Cette app nécessite la permission de localisation.</string>
     <string name="err_response_code">Reçu HTTP %s du serveur !</string>
-    <string name="err_ver_group">Ce serveur ne supporte pas les partages de groupe. Les partages de groupe sont possible à partir de la version %s; ce serveur est actuellement en version %s. Votre partage a été converti en un partage individuel.</string>
+    <string name="err_ver_group" formatted="false">Ce serveur ne supporte pas les partages de groupe. Les partages de groupe sont possible à partir de la version %s; ce serveur est actuellement en version %s. Votre partage a été converti en un partage individuel.</string>
     <string name="manufacturer_oneplus">OnePlus</string>
     <string name="manufacturer_huawei">Huawei</string>
     <string name="manufacturer_xiaomi">Xiaomi</string>
@@ -141,13 +141,13 @@
     <string name="pref_enableE2E_on">Activer le chiffrement de bout en bout</string>
     <string name="pref_requestLink_hint">&lt;Généré aléatoirement&gt;</string>
     <string name="pref_requestLink_title">ID de lien préféré</string>
-    <string name="pref_minUpdateDistance_title">Distance minimale entre les mises à jours (mètres)</string>
+    <string name="pref_minUpdateDistance_title">Distance minimale entre les mises à jour (mètres)</string>
     <string name="pref_cryptUsername_hint">&lt;optionnel&gt;</string>
     <string name="pref_cryptUsername_title">Nom d\'utilisateur</string>
     <string name="password_mask">Touchez pour éditer</string>
     <string name="prefs_header_connection">Connexion</string>
     <string name="title_activity_settings">Configuration</string>
-    <string name="err_ver_e2e">Le serveur ne supporte pas le chiffrement de bout en bout. Le chiffrement de bout en bout est supporté depuis la version %s; ce serveur utilise la version %s. Votre partage sera créé sans chiffrement de bout en bout pour conserver la compatibilité.</string>
+    <string name="err_ver_e2e" formatted="false">Le serveur ne supporte pas le chiffrement de bout en bout. Le chiffrement de bout en bout est supporté à partir de la version %s; ce serveur est actuellement en version %s. Votre partage sera créé sans chiffrement de bout en bout pour maintenir la compatibilité.</string>
     <string name="err_proxy_host_resolution">L\'adresse IP du proxy configuré (%s) n\'a pas pu être résolue !</string>
     <string name="err_proxy_failure">Une erreur s\'est produite lors de la résolution du serveur proxy configuré: %s</string>
     <string name="err_no_nickname">Vous devez choisir un pseudonyme avant de pouvoir rejoindre les partages de groupe. Veuillez choisir un pseudonyme et réessayez.</string>

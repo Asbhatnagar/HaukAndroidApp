@@ -1,6 +1,7 @@
 package info.varden.hauk.ui;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -340,7 +341,7 @@ public final class MainActivity extends AppCompatActivity {
         ((Checkable) findViewById(R.id.chkAllowAdopt)).setChecked(prefs.get(Constants.PREF_ALLOW_ADOPTION));
 
         // Set night mode preference.
-        AppCompatDelegate.setDefaultNightMode(prefs.get(Constants.PREF_NIGHT_MODE).resolve());
+        AppCompatDelegate.setDefaultNightMode(prefs.get(Constants.PREF_NIGHT_MODE).getResolvedNightModeValue());
         // Set app logo visibility.
         findViewById(R.id.imgLogo).setVisibility(prefs.get(Constants.PREF_HIDE_LOGO) ? View.GONE : View.VISIBLE);
     }

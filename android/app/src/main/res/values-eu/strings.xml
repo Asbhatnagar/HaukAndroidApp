@@ -77,7 +77,7 @@
     <string name="btn_link">Sortu jarraipenerako esteka berria</string>
     <string name="label_pin_help">Partekatu PIN hau taldeko beste kideekin zure kokaleku partekatze taldera elkartzea ahalbidetzeko</string>
     <string name="action_copied">Esteka kopiatuta Hauk aplikaziotik</string>
-    <string name="err_ver_group">Zerbitzariak ez ditu talde partekatzeak onartzen. Talde partekatzeak %s bertsiotik gora onartzen dira, zerbitzari honek %s bertsioa darabil. Zure partekatzea partekatze indibiduala bihurtu da.</string>
+    <string name="err_ver_group" formatted="false">Zerbitzariak ez ditu talde partekatzeak onartzen. Talde partekatzeak %s bertsiotik gora onartzen dira, zerbitzari honek %s bertsioa darabil. Zure partekatzea partekatze indibiduala bihurtu da.</string>
     <string name="link_type_group_host">Taldeko partekatzea (ostalaria)</string>
     <string name="explain_adopt_body">Hauk aplikazioak kokaleku partekatze saioak sortzea ahalbidetzen dizu, zuretzat edo talde batentzat. Inork talde partekatze bat sortzen badu, besteek partekatze taldera elkartzeko erabili dezaketen talde kode bat jasoko du.
 \n
@@ -87,10 +87,10 @@
 \n
 \nAukera hau gaitzen baduzu eta zure kokalekua partekatzen baduzu lagun talde batekin, eta beste inork bere kokalekua partekatu nahi badu, talde partekatze bat sortu dezake eta zurea bere mapara gehitu, horrela biak agertuko zarete partekatutako kokaleku mapa berean. Hau erabilgarria da adibidez gidatzen ari zarela telefonoa erabiltzerik ez baduzu, besteek zure partekatzea adoptatzeak ez duelako zure ekintzarik eskatzen.</string>
     <string name="progress_connect_body">Hauk zerbitzarira konektatzen…</string>
-    <string name="resume_body">Amaitu gabeko saio bat duzu:
-\n
-\nPartekatze esteka aktiboa: %d
-\nIraungitzea: %s
-\n
-\nSaio hau berreskuratu nahi duzu\?</string>
+    <string name="resume_body" formatted="false">Amaitu gabeko saio bat duzu:
+
+Partekatze esteka aktiboa: %d
+Iraungitzea: %s
+
+Saio hau berreskuratu nahi duzu?</string>
 </resources>

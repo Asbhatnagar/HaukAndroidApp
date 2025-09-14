@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="info.varden.hauk">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
-        android:icon="@drawable/ic_icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security"
-        android:roundIcon="@drawable/ic_icon"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <activity
             android:name=".system.preferences.ui.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".ui.MainActivity">
+            android:parentActivityName="info.varden.hauk.ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="info.varden.hauk.ui.MainActivity" />
@@ -30,7 +31,6 @@
         <activity
             android:name=".ui.MainActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
             android:theme="@style/HomeTheme"
             android:exported="true">
@@ -42,8 +42,7 @@
 
         <activity
             android:name=".global.ui.AuthorizationActivity"
-            android:screenOrientation="portrait">
-
+            android:exported="false">
         </activity>
 
         <receiver

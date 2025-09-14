@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- General app color theme. -->
+    <!-- Test comment -->
     <color name="colorPrimary">#D80037</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#D80037</color>
+    <color name="launcher_background">#FFFFFF</color>
 
     <!-- Connection status indicators. -->
     <color name="statusOff">#D80037</color>
