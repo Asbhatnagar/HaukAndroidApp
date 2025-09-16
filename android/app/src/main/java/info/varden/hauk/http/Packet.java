@@ -85,10 +85,10 @@ public abstract class Packet {
 
                 // An exception may have occurred, but it cannot be thrown because this is a
                 // callback. Instead, the exception (if any) is stored in the response object.
-                Exception e = resp.getException();
+                Exception e = resp.getEx(); // Changed to use Kotlin getter
                 if (e == null) {
                     try {
-                        onSuccess(resp.getData(), resp.getServerVersion());
+                        onSuccess(resp.getData(), resp.getVer()); // Changed to use Kotlin getter for version
                     } catch (Exception ex) {
                         onFailure(ex);
                     }
@@ -96,6 +96,6 @@ public abstract class Packet {
                     onFailure(e);
                 }
             }
-        }).execute(new ConnectionThread.Request(this.ctx, this.server + this.path, this.params, this.connParams));
+        }).executeFromJava(new ConnectionThread.Request(this.ctx, this.server + this.path, this.params, this.connParams)); // Changed to executeFromJava
     }
 }
