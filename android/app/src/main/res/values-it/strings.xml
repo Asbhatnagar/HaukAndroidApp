@@ -6,20 +6,15 @@
     <string name="proxy_mode_none">Non usare proxy</string>
     <string name="pref_noGnssFallback_title">Utilizza posizione basata sulla rete se il GNSS non è disponibile per (secondi)</string>
     <string name="label_allow_adopt">Consenti adozione:</string>
-    <string name="adopt_body">Puoi adottare una sessione di condivisione individuale esistente per incorporarla in questa condivisione di gruppo. Incolla l\'indirizzo o ID della condivisione della persona che vorresti adottare (per esempio %s\?XXXX-XXXX) e assegna un nome utente a questa persona.</string>
+    <!-- Removed adopt_body -->
     <string name="ok_title">Connessione riuscita</string>
     <string name="ok_message">Condivisione posizione attiva! Clicca sul pulsante condivisione per copiare l\'indirizzo pubblicamente visibile della tua condivisione.</string>
     <string name="ended_title">Condivisione terminata</string>
     <string name="ended_message">La tua condivisione della posizione è terminata.</string>
-    <string name="adopted_title">Condivisione adottata</string>
-    <string name="adopted_body">%s è stato/a aggiunto/a alla tua condivisione!</string>
+    <!-- Removed adopted_title -->
+    <!-- Removed adopted_body -->
     <string name="resume_title">Ripristina sessione</string>
-    <string name="resume_body" formatted="false">Hai una sessione in corso:
-
-Link di condivisione attivo/i: %d
-Scadenza: %s
-
-Vuoi ripristinare la sessione?</string>
+    <string name="resume_body" formatted="false">Hai una sessione in corso:\n\nLink di condivisione attivo/i: %d\nScadenza: %s\n\nVuoi ripristinare la sessione?</string>
     <string name="link_added_title">Indirizzo creato</string>
     <string name="req_perms_title">Permessi richiesti</string>
     <string name="battery_savings_title">Risparmio energetico aggressivo</string>
@@ -68,22 +63,12 @@ Vuoi ripristinare la sessione?</string>
     <string name="about_source_code_title">Codice sorgente</string>
     <string name="about_report_issue_title">Segnala un problema</string>
     <string name="req_perms_message">"Quest\'app richiede l\'accesso alla tua posizione per funzionare, ma questi permessi non stati ancora garantiti. Approva la seguente richiesta per i permessi e clicca nuovamente sul pulsante Inizia  per riprovare."</string>
-    <string name="battery_savings_body">Sembra che tu stia utilizzando un dispositivo %s. Questi dispositivi hanno impostazioni di risparmio energetico particolarmente aggressive che potrebbero imperdire ad Hauk di inviare aggiornamenti della posizione in secondo piano.
-\n
-\nSi consiglia di assicurarsi che Hauk non sia incluso dalle impostazioni di risparmio energetico, in modo che l\'app non smetta di funzionare inaspettatamente.
-\n
-\nQuesto messaggio non verrà mostrato nuovamente.</string>
-    <string name="explain_adopt_body">Hauk ti premette di creare sessioni per la condivisione della posizione per te o per un gruppo di persone. Se qualcuno crea una condivisione di gruppo, essi ricevono un codice di gruppo che altri possono utilizzare per unirsi alla sessione.
-\n
-\nLa persona che crea la condivisione di gruppo ha anche la possibilità di aggiungere persone che stanno già condividendo la loro posizione in un loro gruppo. Questo processo è detto “adozione”.
-\n
-\nSe attivi questa opzione e condividi la tua posizione con un gruppo di amici, e qualcun\'altro vuole condividere la sua posizione, questi possono creare una condivisione di gruppo e aggiungerti alla loro mappa, così entrambi apparirete sulla stessa mappa condivisa. Questa funzione è utile se per esempio stai guidando e non puoi usare il cellulare, dato che l\'adozione della tua posizione condivisa non richiede alcuna interazione da parte tua.</string>
-    <string name="create_link_body">Puoi creare diversi link per accedere alla tua posizione condivisa. Ciascuno di questi link può essere eliminato individualmente, consentendo un controllo capillare riguardo chi può vedere la tua posizione in ogni momento.
-\n
-\nQualunque link aggiuntivo da te creato in questo modo sarà una condivisione da utente singolo che mostrerà solo la tua posizione.</string>
+    <string name="battery_savings_body">Sembra che tu stia utilizzando un dispositivo %s. Questi dispositivi hanno impostazioni di risparmio energetico particolarmente aggressive che potrebbero imperdire ad Hauk di inviare aggiornamenti della posizione in secondo piano.\n\nSi consiglia di assicurarsi che Hauk non sia incluso dalle impostazioni di risparmio energetico, in modo che l\'app non smetta di funzionare inaspettatamente.\n\nQuesto messaggio non verrà mostrato nuovamente.</string>
+    <!-- Removed explain_adopt_body -->
+    <string name="create_link_body">Puoi creare diversi link per accedere alla tua posizione condivisa. Ciascuno di questi link può essere eliminato individualmente, consentendo un controllo capillare riguardo chi può vedere la tua posizione in ogni momento.\n\nQualunque link aggiuntivo da te creato in questo modo sarà una condivisione da utente singolo che mostrerà solo la tua posizione.</string>
     <string name="err_server_not_configured">Non hai ancora configurato un server di supporto. Compila i dettagli del tuo server di supporto nelle impostazioni e riprova.</string>
     <string name="err_empty">Il server ha restituito una risposta vuota.</string>
-    <string name="err_ver_group" formatted="false">Il server non supporta condivisioni di gruppo. Le condivisioni di gruppo sono supportate dalla versione %s e successive; il server sta utilizzando la versione %s. La condivisione è stata convertita in condivisione individuale.</string>
+    <!-- Removed err_ver_group -->
     <string name="err_ver_e2e" formatted="false">Il server non supporta la crittografia end-to-end.  La crittografia end-to-end è supportata dalla versione %s e successive; il server sta utilizzando la versione %s. La condivisione verrà creata senza crittografia end-to-end al fine di mantenere la compatibilità.</string>
     <string name="action_settings">Impostazioni</string>
     <string name="label_nickname">Nome utente:</string>
@@ -92,13 +77,13 @@ Vuoi ripristinare la sessione?</string>
     <string name="sel_unit_opt_minutes">minuto/i</string>
     <string name="sel_unit_opt_hours">ora/e</string>
     <string name="sel_unit_opt_days">giorno/i</string>
-    <string name="label_mode">Modalità condivisione:</string>
-    <string name="sel_mode_opt_alone">Condividi solo la mia posizione</string>
-    <string name="sel_mode_opt_create_group">Crea una condivisione di gruppo</string>
-    <string name="sel_mode_opt_join_group">Unisciti a una condivisione di gruppo</string>
-    <string name="chk_allow_adopt">Consenti ad altri di aggiungermi ad una condivisione di gruppo</string>
+    <!-- Removed label_mode -->
+    <!-- Removed sel_mode_opt_alone -->
+    <!-- Removed sel_mode_opt_create_group -->
+    <!-- Removed sel_mode_opt_join_group -->
+    <string name="chk_allow_adopt">Consenti ad altri di aggiungermi ad una condivisione di gruppo</string> <!-- Might need rephrasing -->
     <string name="label_explain_adopt">(Di cosa si tratta\?)</string>
-    <string name="label_pin">PIN del gruppo:</string>
+    <!-- Removed label_pin -->
     <string name="label_status">Stato:</string>
     <string name="label_status_none">Condivisione posizione inattiva</string>
     <string name="label_status_wait">In attesa del collegamento GNSS iniziale…</string>
@@ -108,9 +93,9 @@ Vuoi ripristinare la sessione?</string>
     <string name="label_status_disconnected">Impossibile raggiungere il server</string>
     <string name="btn_start">Inizia condivisione</string>
     <string name="btn_stop">Interrompi condivisione [%s]</string>
-    <string name="explain_adopt_title">Adozione condivisione</string>
+    <string name="explain_adopt_title">Adozione condivisione</string> <!-- Title kept, body removed -->
     <string name="btn_link">Crea nuovo link di condivisione</string>
-    <string name="btn_adopt">Unisci un link di condivisione esistente</string>
+    <!-- Removed btn_adopt -->
     <string name="dialog_confirm_stop_title">Interrompere condivisione\?</string>
     <string name="dialog_confirm_stop_body">Sei sicuro di voler interrompere la condivisione della tua posizione\?</string>
     <string name="dialog_confirm_stop_share">Sei sicuro di voler eliminare questo link di condivisione\?</string>
@@ -119,13 +104,13 @@ Vuoi ripristinare la sessione?</string>
     <string name="label_heading_links">Link attivi</string>
     <string name="label_heading_no_links">Nessun link attivo al momento</string>
     <string name="link_type_solo">Solo la tua posizione</string>
-    <string name="link_type_group_host">Condivisione di gruppo (ospite)</string>
-    <string name="link_type_group_member">Condivisione di gruppo (membro)</string>
-    <string name="label_pin_head">PIN GRUPPO:</string>
-    <string name="label_pin_help">Condividi questo PIN con gli altri nel tuo gruppo, in modo che possano unirsi al tuo gruppo di condivisione</string>
+    <!-- Removed link_type_group_host -->
+    <!-- Removed link_type_group_member -->
+    <!-- Removed label_pin_head -->
+    <!-- Removed label_pin_help -->
     <string name="btn_dismiss">D\'accordo</string>
-    <string name="adopt_title">Adotta la sessione di un altro utente</string>
-    <string name="label_share_url">ID condivisione/Indirizzo:</string>
+    <!-- Removed adopt_title -->
+    <!-- Removed label_share_url -->
     <string name="create_link_title">Crea nuovo link condivisione</string>
     <string name="btn_ok">OK</string>
     <string name="btn_cancel">Annulla</string>
@@ -141,8 +126,8 @@ Vuoi ripristinare la sessione?</string>
     <string name="progress_connect_title">Connessione</string>
     <string name="progress_connect_body">Connession a Hauk in corso…</string>
     <string name="progress_resolving_proxy">Risoluzione nome host del proxy in corso…</string>
-    <string name="progress_adopt_title">Adozione</string>
-    <string name="progress_adopt_body">Adozione di %s in corso…</string>
+    <!-- Removed progress_adopt_title -->
+    <!-- Removed progress_adopt_body -->
     <string name="progress_new_link_title">Creazione link</string>
     <string name="progress_new_link_body">Creazione link di condivisione in corso…</string>
     <string name="err_client">Impostazioni non valide</string>
@@ -150,7 +135,7 @@ Vuoi ripristinare la sessione?</string>
     <string name="err_missing_perms">I permessi per la posizione sono richiesti per l\'uso di quest\'app.</string>
     <string name="err_location_disabled">I servizi di geolocalizzazione sono disattivati. È necessario attivare i servizi di geolocalizzazione ad alta precisione per poter condividere la tua posizione.</string>
     <string name="err_invalid_duration">La durata immessa non è valida. Seleziona una durata diversa.</string>
-    <string name="err_no_nickname">Devi impostare un nome utente prima che tu possa unirti a condivisioni di gruppo. Imposta un nome utente e riprova.</string>
+    <!-- Removed err_no_nickname -->
     <string name="err_connect">Errore di connessione</string>
     <string name="err_proxy_failure">Si è riscontrato il seguente errore durante la risoluzione del nome host del proxy configurato: %s</string>
     <string name="err_proxy_host_resolution">L\'indirizzo IP del proxy configurato (%s) non può essere risolto!</string>

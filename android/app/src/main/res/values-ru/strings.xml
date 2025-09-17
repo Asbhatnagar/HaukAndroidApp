@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="progress_adopt_body">Добавление %s…</string>
+    <!-- Removed progress_adopt_body -->
+    <!-- <string name="progress_adopt_body">Добавление %s…</string> -->
     <string name="progress_new_link_body">Создаем новую ссылку на шару…</string>
     <string name="err_client">Ошибка в настройках</string>
     <string name="err_connect">Ошибка подключения</string>
@@ -16,14 +17,18 @@
     <string name="pref_interval_title">Интервал обновления (сек)</string>
     <string name="label_explain_adopt">(Что это\?)</string>
     <string name="label_nickname">Ник:</string>
-    <string name="label_pin">Групповой PIN:</string>
+    <!-- Removed label_pin -->
+    <!-- <string name="label_pin">Групповой PIN:</string> -->
     <string name="label_status">Статус:</string>
-    <string name="label_share_url">ID/URL шары:</string>
+    <!-- Removed label_share_url -->
+    <!-- <string name="label_share_url">ID/URL шары:</string> -->
     <string name="btn_start">Старт сессии</string>
     <string name="btn_stop">Остановить сессию [%s]</string>
-    <string name="btn_adopt">добавить к существующей ссылке</string>
+    <!-- Removed btn_adopt -->
+    <!-- <string name="btn_adopt">добавить к существующей ссылке</string> -->
     <string name="btn_share_short">Шара</string>
-    <string name="link_type_group_member">Группа (участник)</string>
+    <!-- Removed link_type_group_member -->
+    <!-- <string name="link_type_group_member">Группа (участник)</string> -->
     <string name="sel_unit_opt_minutes">минут</string>
     <string name="sel_unit_opt_hours">часов</string>
     <string name="sel_unit_opt_days">дней</string>
@@ -31,13 +36,16 @@
     <string name="label_status_ok">Шаринг местоположения включен!</string>
     <string name="explain_adopt_title">Присоединение к шаре</string>
     <string name="ok_title">Соединение установлено</string>
-    <string name="adopted_title">Шара добавлена</string>
-    <string name="adopted_body">%s была добавлена в вашу шару!</string>
+    <!-- Removed adopted_title -->
+    <!-- <string name="adopted_title">Шара добавлена</string> -->
+    <!-- Removed adopted_body -->
+    <!-- <string name="adopted_body">%s была добавлена в вашу шару!</string> -->
     <string name="resume_title">Возобновить сессию</string>
     <string name="link_added_title">Ссылка создана</string>
     <string name="req_perms_title">Необходимо разрешение</string>
     <string name="battery_savings_title">Агрессивное энергосбережение</string>
-    <string name="adopt_title">Добавить другого пользователя</string>
+    <!-- Removed adopt_title -->
+    <!-- <string name="adopt_title">Добавить другого пользователя</string> -->
     <string name="create_link_title">Создать новую ссылку на шару</string>
     <string name="btn_cancel">Отмена</string>
     <string name="btn_yes">Да</string>
@@ -50,24 +58,32 @@
     <string name="action_stop">Остановить шаринг</string>
     <string name="notify_body">Hauk шарит ваше местоположение %s</string>
     <string name="btn_ok">OK</string>
-    <string name="label_mode">Режим шары:</string>
+    <!-- Removed label_mode -->
+    <!-- <string name="label_mode">Режим шары:</string> -->
     <string name="chk_allow_adopt">Разрешить другим пользователям добавлять меня в группы</string>
     <string name="label_allow_adopt">Разрешить добавление:</string>
     <string name="btn_link">Создать новую ссылку</string>
     <string name="btn_stop_short">Стоп</string>
     <string name="label_heading_links">Активные ссылки сейчас</string>
     <string name="link_type_solo">Только ваше местоположение</string>
-    <string name="link_type_group_host">Группа (создатель)</string>
-    <string name="sel_mode_opt_alone">Поделится только моим местоположением</string>
-    <string name="sel_mode_opt_create_group">Создать групповую шару</string>
-    <string name="sel_mode_opt_join_group">Присоединиться к групповой шаре</string>
+    <!-- Removed link_type_group_host -->
+    <!-- <string name="link_type_group_host">Группа (создатель)</string> -->
+    <!-- Removed sel_mode_opt_alone -->
+    <!-- <string name="sel_mode_opt_alone">Поделится только моим местоположением</string> -->
+    <!-- Removed sel_mode_opt_create_group -->
+    <!-- <string name="sel_mode_opt_create_group">Создать групповую шару</string> -->
+    <!-- Removed sel_mode_opt_join_group -->
+    <!-- <string name="sel_mode_opt_join_group">Присоединиться к групповой шаре</string> -->
     <string name="label_status_wait">Ждем вычисления местоположения …</string>
     <string name="label_status_coarse">Ждем вычисления высокоточного местоположения…</string>
-    <string name="label_pin_head">ВАШ ГРУППОВОЙ PIN:</string>
-    <string name="label_pin_help">Поделитесь этим PINом с другими что бы они могли присоединиться к группе</string>
+    <!-- Removed label_pin_head -->
+    <!-- <string name="label_pin_head">ВАШ ГРУППОВОЙ PIN:</string> -->
+    <!-- Removed label_pin_help -->
+    <!-- <string name="label_pin_help">Поделитесь этим PINом с другими что бы они могли присоединиться к группе</string> -->
     <string name="progress_connect_title">Соединение</string>
     <string name="progress_connect_body">Подключаемся к Hauk…</string>
-    <string name="progress_adopt_title">Добавление</string>
+    <!-- Removed progress_adopt_title -->
+    <!-- <string name="progress_adopt_title">Добавление</string> -->
     <string name="progress_new_link_title">Создаем ссылку</string>
     <string name="err_server">Ошибка на стороне сервера</string>
     <string name="authorize_body">Hauk получил и заблокировал попытку создания новой сессии от широковещательного источника, который был определен как</string>
@@ -76,7 +92,8 @@
     <string name="label_heading">Открытое ПО для отслеживания местоположения</string>
     <string name="err_missing_perms">Необходимы разрешения для использования местоположения для этого приложения.</string>
     <string name="err_location_disabled">Сервисы геолокации запрещены/выключены. Пожалуйста, включите высокоточную геолокацию, что бы делится своим местоположением.</string>
-    <string name="err_ver_group" formatted="false">Сервер не поддерживает групповые шары. Групповые шары поддерживаются в версии %s и выше; текущая версия сервера %s. Ваша шара конвертирована в индивидуальную.</string>
+    <!-- Removed err_ver_group -->
+    <!-- <string name="err_ver_group" formatted="false">Сервер не поддерживает групповые шары. Групповые шары поддерживаются в версии %s и выше; текущая версия сервера %s. Ваша шара конвертирована в индивидуальную.</string> -->
     <string name="create_link_body">Вы можете создать несколько ссылок на сессию. Каждая ссылка может быть отключена индивидуально, что позволяет более точно контролировать кто может видить ваше местоположение
 \n
 \nВсе дополнительные ссылки которые вы создаете этим путём будут однопользовательскими и будут показывать только ваше местоположение.</string>
@@ -99,14 +116,16 @@
     <string name="share_via">Поделится ссылкой на Hauk с помощью</string>
     <string name="authorize_header">Запрос на широковещание</string>
     <string name="manufacturer_oneplus">OnePlus</string>
-    <string name="explain_adopt_body">Hauk позволяет вам создавать сессии геошеринга для себя и для группы людей. Если кто то создает групповую шару у них есть групповой код который другие пользователи могут использовать что бы присоединится к сессии. 
+    <!-- Removed explain_adopt_body -->
+    <!-- <string name="explain_adopt_body">Hauk позволяет вам создавать сессии геошеринга для себя и для группы людей. Если кто то создает групповую шару у них есть групповой код который другие пользователи могут использовать что бы присоединится к сессии. 
 \n
 \nОднако, пользователь создающий групповую шару так же может включить вашу в уже существующую сессию. Это называется присоединение.
 \n
 \nВы можете выбирать разрешено или нет другим пользователям присоединять вашу сессию к их групповым сессиям с помощью этой галочки.
 \n
-\nЕсли вы разрешите эту опцию и поделитесь своим местоположением со своими друзьями и кто то из них захочет поделится своим местоположением, то они могут создать групповую шару и добавить вас на их карту, так что вы все будете видны на одной и той же карте. Это полезно если вы ведете машину и не можете пользоваться телефоном. При этом добавление вас на их карту не требует взаимодействия вас с программой.</string>
-    <string name="adopt_body">Вы можете добавить существующие индивидуальные шары что бы собрать их в групповую шару. Пожалуйста вставьте URL или ID шары которую вы ходите добавить. (к примеру %s\?XXXX-XXXX) и дайте ей ник.</string>
+\nЕсли вы разрешите эту опцию и поделитесь своим местоположением со своими друзьями и кто то из них захочет поделится своим местоположением, то они могут создать групповую шару и добавить вас на их карту, так что вы все будете видны на одной и той же карте. Это полезно если вы ведете машину и не можете пользоваться телефоном. При этом добавление вас на их карту не требует взаимодействия вас с программой.</string> -->
+    <!-- Removed adopt_body -->
+    <!-- <string name="adopt_body">Вы можете добавить существующие индивидуальные шары что бы собрать их в групповую шару. Пожалуйста вставьте URL или ID шары которую вы ходите добавить. (к примеру %s\?XXXX-XXXX) и дайте ей ник.</string> -->
     <string name="pref_tlsCertValidation_title">Проверка сертификата HTTPS</string>
     <string name="action_settings">Настройки</string>
     <string name="prefs_nightMode_title">Ночной режим</string>
@@ -130,7 +149,8 @@
     <string name="label_status_disconnected">Сервер недоступен</string>
     <string name="tls_validation_all">Всегда проверять сертификат (рекомендуется)</string>
     <string name="pref_confirmStop_off">Не просить подтверждение при остановке передачи местоположения</string>
-    <string name="err_no_nickname">Вам необходимо указать свое имя прежде чем присоединяться к группе. Пожалуйста, укажите свое имя и повторите попытку.</string>
+    <!-- Removed err_no_nickname -->
+    <!-- <string name="err_no_nickname">Вам необходимо указать свое имя прежде чем присоединяться к группе. Пожалуйста, укажите свое имя и повторите попытку.</string> -->
     <string name="err_proxy_failure">Ошибка при попытке получения IP адреса прокси: %s</string>
     <string name="dialog_confirm_stop_share">Вы уверены что хотите удалить эту ссылку\?</string>
     <string name="progress_resolving_proxy">получение DNS-имени прокси…</string>

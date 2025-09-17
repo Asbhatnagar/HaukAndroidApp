@@ -16,24 +16,29 @@
     <string name="btn_no">Hayır</string>
     <string name="btn_yes">Evet</string>
     <string name="btn_ok">TAMAM</string>
-    <string name="label_share_url">Paylaşım ID/URL:</string>
-    <string name="label_pin_head">GRUP PIN\'IN:</string>
+    <!-- Removed label_share_url -->
+    <!-- <string name="label_share_url">Paylaşım ID/URL:</string> -->
+    <!-- Removed label_pin_head -->
+    <!-- <string name="label_pin_head">GRUP PIN\'IN:</string> -->
     <string name="link_type_solo">Sadece kendi konumun</string>
     <string name="btn_share_short">Paylaş</string>
     <string name="btn_stop_short">Durdur</string>
     <string name="dialog_confirm_stop_share">Bu paylaşım linkini silmek istediğine emin misin\?</string>
     <string name="dialog_confirm_stop_body">Konum paylaşımını durdurmak istediğine emin misin\?</string>
     <string name="dialog_confirm_stop_title">Paylaşım durdurulsun mu\?</string>
-    <string name="btn_adopt">Varolan bir paylaşım linkini birleştir</string>
+    <!-- Removed btn_adopt -->
+    <!-- <string name="btn_adopt">Varolan bir paylaşım linkini birleştir</string> -->
     <string name="btn_link">Yeni paylaşım linki oluştur</string>
     <string name="btn_stop">Paylaşımı durdur [%s]</string>
     <string name="btn_start">Paylaşımı başlat</string>
     <string name="label_status_none">Konum paylaşımı etkin değil</string>
     <string name="label_status">Durum:</string>
-    <string name="label_pin">Grup PIN:</string>
+    <!-- Removed label_pin -->
+    <!-- <string name="label_pin">Grup PIN:</string> -->
     <string name="label_nickname">Takma ad:</string>
     <string name="label_explain_adopt">(Bu nedir\?)</string>
-    <string name="sel_mode_opt_alone">Sadece kendi konumumu paylaş</string>
+    <!-- Removed sel_mode_opt_alone -->
+    <!-- <string name="sel_mode_opt_alone">Sadece kendi konumumu paylaş</string> -->
     <string name="sel_unit_opt_days">gün</string>
     <string name="sel_unit_opt_hours">saat</string>
     <string name="sel_unit_opt_minutes">dakika</string>
@@ -43,9 +48,12 @@
     <string name="label_status_coarse">Yüksek doğrulama için bekleniyor…</string>
     <string name="label_status_lost_gnss">Konum aranıyor…</string>
     <string name="chk_allow_adopt">Diğer kullanııların beni bir grup paylaşımına almalarına izin ver</string>
-    <string name="sel_mode_opt_join_group">Bir grup paylaşımına katıl</string>
-    <string name="sel_mode_opt_create_group">Bir grup paylaşımı oluştur</string>
-    <string name="label_mode">Paylaşım modu:</string>
+    <!-- Removed sel_mode_opt_join_group -->
+    <!-- <string name="sel_mode_opt_join_group">Bir grup paylaşımına katıl</string> -->
+    <!-- Removed sel_mode_opt_create_group -->
+    <!-- <string name="sel_mode_opt_create_group">Bir grup paylaşımı oluştur</string> -->
+    <!-- Removed label_mode -->
+    <!-- <string name="label_mode">Paylaşım modu:</string> -->
     <string name="label_duration">Paylaşım süresi:</string>
     <string name="label_heading">Açık kaynak konum paylaşımı</string>
     <string name="label_heading_links">Aktif linkler</string>

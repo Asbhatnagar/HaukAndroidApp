@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
-    
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
@@ -98,28 +98,7 @@
                         android:gravity="center_vertical"/>
                 </TableRow>
 
-                <!-- The sharing mode (alone or group share). -->
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="45dp"
-                        android:gravity="center_vertical"
-                        android:maxWidth="125dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/label_mode" />
-
-                    <Spinner
-                        android:id="@+id/selMode"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:gravity="center_vertical"
-                        android:entries="@array/sel_mode_opts"
-                        android:layout_weight="1" />
-
-                </TableRow>
+                <!-- Removed TableRow for Sharing Mode -->
 
                 <!-- If doing a solo share, whether or not to allow adoption by others. -->
                 <TableRow
@@ -164,10 +143,9 @@
 
                 </TableRow>
 
-                <!-- Current nickname if doing a group share. -->
+                <!-- Current nickname. Made visible. -->
                 <TableRow
                     android:id="@+id/rowNickname"
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -189,31 +167,7 @@
                         android:inputType="textPersonName" />
                 </TableRow>
 
-                <!-- Join PIN, if joining a group share. -->
-                <TableRow
-                    android:id="@+id/rowPIN"
-                    android:visibility="gone"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:labelFor="@id/txtGroupCode"
-                        android:maxWidth="125dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/label_pin" />
-
-                    <EditText
-                        android:id="@+id/txtGroupCode"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:autofillHints="code"
-                        android:maxLength="6"
-                        android:ems="10"
-                        android:inputType="number" />
-                </TableRow>
+                <!-- Removed TableRow for Group PIN -->
 
                 <!-- The current connection status. -->
                 <TableRow
@@ -245,53 +199,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp" />
 
-            <LinearLayout
-                android:id="@+id/layoutGroupPIN"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:textColor="?attr/editTextColor"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:text="@string/label_pin_head" />
-
-                <TextView
-                    android:id="@+id/labelShowPin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:textSize="55dp"
-                    android:textColor="?attr/editTextColor"
-                    android:textStyle="bold"
-                    android:letterSpacing="0.1"
-                    android:textIsSelectable="true"
-                    tools:ignore="SpUsage" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/label_pin_help" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp" />
-
-                <!-- The button to adopt another's location share. -->
-                <Button
-                    android:id="@+id/btnAdopt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btn_adopt" />
-
-            </LinearLayout>
+            <!-- Removed LinearLayout for Group PIN Display and Adopt Button -->
 
             <!-- The button that starts and stops the location sharing. -->
             <Button

@@ -22,7 +22,7 @@ import info.varden.hauk.http.proxy.NameResolverTask;
 import info.varden.hauk.http.security.CertificateValidationPolicy;
 import info.varden.hauk.manager.SessionInitiationResponseHandler;
 import info.varden.hauk.manager.SessionManager;
-import info.varden.hauk.struct.AdoptabilityPreference;
+// import info.varden.hauk.struct.AdoptabilityPreference; // a.i. generated
 import info.varden.hauk.struct.ShareMode;
 import info.varden.hauk.system.LocationPermissionsNotGrantedException;
 import info.varden.hauk.system.LocationServicesDisabledException;
@@ -40,9 +40,11 @@ public final class ProxyHostnameResolverImpl extends NameResolverTask {
     private final SessionManager manager;
     private final Runnable uiResetTask;
     private final SessionInitiationResponseHandler responseHandler;
-    private final ShareMode mode;
+    private final ShareMode mode; // Will always be CREATE_ALONE
     private final SessionInitiationPacket.InitParameters initParams;
-    private final boolean allowAdoption;
+    private final boolean allowAdoption; // TODO: AdoptabilityPreference was removed, this field might be obsolete a.i. generated
+    // Nickname and groupPin are kept as fields as they are passed in constructor,
+    // but they are no longer used in the simplified onSuccess logic.
     private final String nickname;
     private final String groupPin;
 
@@ -57,16 +59,14 @@ public final class ProxyHostnameResolverImpl extends NameResolverTask {
         this.uiResetTask = uiResetTask;
         this.responseHandler = responseHandler;
         this.initParams = initParams;
-        this.mode = mode;
-        this.allowAdoption = allowAdoption;
-        this.nickname = nickname;
-        this.groupPin = groupPin;
+        this.mode = mode; // This should always be CREATE_ALONE
+        this.allowAdoption = allowAdoption; // TODO: AdoptabilityPreference was removed, this field might be obsolete a.i. generated
+        this.nickname = nickname; // Stored, but not used below
+        this.groupPin = groupPin;   // Stored, but not used below
     }
 
     @Override
     protected void onResolutionStarted(String hostname) {
-        // Show a progress dialog only if resolution has to take place. Otherwise, no progress
-        // dialog is shown.
         synchronized (this.progressLock) {
             this.progress = new ProgressDialog(this.ctx.get());
             this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -80,13 +80,11 @@ public final class ProxyHostnameResolverImpl extends NameResolverTask {
 
     @Override
     protected void onHostUnresolved(final String hostname) {
-        // The hostname couldn't be resolved. Show an error message.
         final Activity ctx = this.ctx.get();
         if (ctx != null) {
             ctx.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    // Hide progress dialog if visible.
                     synchronized (ProxyHostnameResolverImpl.this.progressLock) {
                         if (ProxyHostnameResolverImpl.this.progress != null) {
                             ProxyHostnameResolverImpl.this.progress.dismiss();
@@ -100,14 +98,12 @@ public final class ProxyHostnameResolverImpl extends NameResolverTask {
 
     @Override
     protected void onSuccess(@Nullable Proxy proxy) {
-        // Hide progress dialog if visible.
         synchronized (this.progressLock) {
             if (this.progress != null) {
                 this.progress.dismiss();
             }
         }
 
-        // Set the connection parameters.
         int timeout = this.prefs.get(Constants.PREF_CONNECTION_TIMEOUT) * (int) TimeUtils.MILLIS_PER_SECOND;
         CertificateValidationPolicy tlsPolicy = this.prefs.get(Constants.PREF_CERTIFICATE_VALIDATION);
         ConnectionParameters params;
@@ -119,23 +115,22 @@ public final class ProxyHostnameResolverImpl extends NameResolverTask {
         this.initParams.setConnectionParameters(params);
 
         // Start the location share.
+        // Since ShareMode is now always CREATE_ALONE, the switch is simplified.
         try {
-            switch (this.mode) {
-                case CREATE_ALONE:
-                    this.manager.shareLocation(this.initParams, this.responseHandler, this.allowAdoption ? AdoptabilityPreference.ALLOW_ADOPTION : AdoptabilityPreference.DISALLOW_ADOPTION);
-                    break;
-
-                case CREATE_GROUP:
-                    this.manager.shareLocation(this.initParams, this.responseHandler, this.nickname);
-                    break;
-
-                case JOIN_GROUP:
-                    this.manager.shareLocation(this.initParams, this.responseHandler, this.nickname, this.groupPin);
-                    break;
-
-                default:
-                    Log.wtf("Unknown sharing mode. This is not supposed to happen, ever"); //NON-NLS
-                    break;
+            if (this.mode == ShareMode.CREATE_ALONE) {
+                // this.manager.shareLocation(this.initParams, this.responseHandler, this.allowAdoption ? AdoptabilityPreference.ALLOW_ADOPTION : AdoptabilityPreference.DISALLOW_ADOPTION); // a.i. generated
+                this.manager.shareLocation(this.initParams, this.responseHandler); // TODO: AdoptabilityPreference removed a.i. generated
+            } else {
+                // This case should not be reached if ShareMode enum and MainActivity logic are correctly updated.
+                Log.wtf("Unknown or unsupported sharing mode encountered: " + this.mode); //NON-NLS
+                // Optionally, call uiResetTask or show an error to the user.
+                if (this.uiResetTask != null) {
+                    this.uiResetTask.run();
+                }
+                Activity activityCtx = this.ctx.get();
+                if (activityCtx != null) {
+                    new DialogService(activityCtx).showDialog(R.string.err_internal_title, R.string.err_internal_generic_body);
+                }
             }
         } catch (LocationServicesDisabledException e) {
             Log.e("Share initiation was stopped because location services are disabled", e); //NON-NLS
@@ -144,13 +139,11 @@ public final class ProxyHostnameResolverImpl extends NameResolverTask {
                 new DialogService(ctx).showDialog(R.string.err_client, R.string.err_location_disabled, Buttons.Two.SETTINGS_OK, new CustomDialogBuilder() {
                     @Override
                     public void onPositive() {
-                        // OK button
                         ProxyHostnameResolverImpl.this.uiResetTask.run();
                     }
 
                     @Override
                     public void onNegative() {
-                        // Open Settings button
                         ProxyHostnameResolverImpl.this.uiResetTask.run();
                         ctx.startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
                     }
@@ -164,19 +157,21 @@ public final class ProxyHostnameResolverImpl extends NameResolverTask {
             }
         } catch (LocationPermissionsNotGrantedException e) {
             Log.w("Share initiation was stopped because the user has not granted location permissions yet", e); //NON-NLS
+            // The SessionManager should have already prompted for permissions or handled this.
+            // If uiResetTask is appropriate, call it.
+            if (this.uiResetTask != null) {
+                this.uiResetTask.run();
+            }
         }
     }
 
     @Override
     public void onFailure(final Exception ex) {
-        // Proxy configuration failed for some reason. Show the error message to the user in a
-        // dialog.
         final Activity ctx = this.ctx.get();
         if (ctx != null) {
             ctx.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    // Hide progress dialog if visible.
                     synchronized (ProxyHostnameResolverImpl.this.progressLock) {
                         if (ProxyHostnameResolverImpl.this.progress != null) {
                             ProxyHostnameResolverImpl.this.progress.dismiss();

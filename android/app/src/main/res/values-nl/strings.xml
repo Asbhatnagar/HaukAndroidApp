@@ -1,41 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="err_response_code">HTTP %s ontvangen van server!</string>
-    <string name="label_pin_help">Deel deze PIN met anderen in uw groep zodat zij uw locatie kunnen volgen</string>
-    <string name="err_ver_group" formatted="false">De server ondersteund geen groepsdelingen. Groepsdelingen zijn ondersteund vanaf versie %s; de server draait op dit moment versie %s. Uw locatiedeling is omgezet in een individuele deling.</string>
+    <!-- Removed label_pin_help -->
+    <!-- <string name="label_pin_help">Deel deze PIN met anderen in uw groep zodat zij uw locatie kunnen volgen</string> -->
+    <!-- Removed err_ver_group -->
+    <!-- <string name="err_ver_group" formatted="false">De server ondersteund geen groepsdelingen. Groepsdelingen zijn ondersteund vanaf versie %s; de server draait op dit moment versie %s. Uw locatiedeling is omgezet in een individuele deling.</string> -->
     <string name="label_heading">Open source locatie deling</string>
     <string name="pref_cryptServer_title">Server URL</string>
     <string name="pref_cryptPassword_title">Wachtwoord</string>
     <string name="label_duration">Deelduratie:</string>
     <string name="pref_interval_title">Updatefrequentie (seconden)</string>
-    <string name="label_mode">Deelmodus:</string>
+    <!-- Removed label_mode -->
+    <!-- <string name="label_mode">Deelmodus:</string> -->
     <string name="label_explain_adopt">(Wat is dit\?)</string>
     <string name="label_nickname">Bijnaam:</string>
-    <string name="label_pin">Groep PIN:</string>
+    <!-- Removed label_pin -->
+    <!-- <string name="label_pin">Groep PIN:</string> -->
     <string name="label_status">Status:</string>
     <string name="label_allow_adopt">Toevoegen aan groep toestaan:</string>
-    <string name="label_share_url">Deel ID/URL:</string>
+    <!-- Removed label_share_url -->
+    <!-- <string name="label_share_url">Deel ID/URL:</string> -->
     <string name="btn_start">Start met delen</string>
     <string name="btn_stop">Stop met delen van [%s]</string>
     <string name="btn_link">Creëer nieuwe deel link</string>
-    <string name="btn_adopt">Voeg een bestaande deling samen</string>
+    <!-- Removed btn_adopt -->
+    <!-- <string name="btn_adopt">Voeg een bestaande deling samen</string> -->
     <string name="btn_stop_short">Stop</string>
     <string name="btn_share_short">Delen</string>
     <string name="link_type_solo">Alleen uw locatie</string>
-    <string name="link_type_group_host">Groepsdeling (organisator)</string>
-    <string name="link_type_group_member">Groepsdeling (deelnemer)</string>
-    <string name="sel_mode_opt_alone">Deel alleen mijn locatie</string>
-    <string name="sel_mode_opt_create_group">Maak een groepsdeling aan</string>
+    <!-- Removed link_type_group_host -->
+    <!-- <string name="link_type_group_host">Groepsdeling (organisator)</string> -->
+    <!-- Removed link_type_group_member -->
+    <!-- <string name="link_type_group_member">Groepsdeling (deelnemer)</string> -->
+    <!-- Removed sel_mode_opt_alone -->
+    <!-- <string name="sel_mode_opt_alone">Deel alleen mijn locatie</string> -->
+    <!-- Removed sel_mode_opt_create_group -->
+    <!-- <string name="sel_mode_opt_create_group">Maak een groepsdeling aan</string> -->
     <string name="sel_unit_opt_minutes">minuten</string>
     <string name="sel_unit_opt_hours">uren</string>
     <string name="sel_unit_opt_days">dagen</string>
     <string name="label_status_none">Locatie delen inactief</string>
     <string name="label_status_coarse">Wachten op fix met hoge nauwkeurigheid…</string>
     <string name="label_status_ok">Locatie delen actief!</string>
-    <string name="label_pin_head">UW GROEP PIN:</string>
+    <!-- Removed label_pin_head -->
+    <!-- <string name="label_pin_head">UW GROEP PIN:</string> -->
     <string name="explain_adopt_title">Deling adoptatie</string>
-    <string name="adopt_title">Een sessie van een andere gebruiker adopteren</string>
-    <string name="adopt_body">U kunt een bestaande individuele locatiedeling toevoegen aan deze groepsdeling. Voer daarvoor alstublieft de URL of deel ID van de persoon in die u wilt adopteren (bijvoorbeeld %s\?XXXX-XXXX) en wijs een bijnaam toe aan deze persoon.</string>
+    <!-- Removed adopt_title -->
+    <!-- <string name="adopt_title">Een sessie van een andere gebruiker adopteren</string> -->
+    <!-- Removed adopt_body -->
+    <!-- <string name="adopt_body">U kunt een bestaande individuele locatiedeling toevoegen aan deze groepsdeling. Voer daarvoor alstublieft de URL of deel ID van de persoon in die u wilt adopteren (bijvoorbeeld %s\?XXXX-XXXX) en wijs een bijnaam toe aan deze persoon.</string> -->
     <string name="create_link_title">Creëer nieuwe deel link</string>
     <string name="create_link_body">U kunt meerdere links creëren waarmee uw locatie bekeken kan worden. Elke link kan individueel uitgezet worden, om op elk moment precieze controle te hebben over wie uw locatie kan zien.
 \n
@@ -51,8 +64,10 @@
     <string name="action_stop">Stop met delen</string>
     <string name="notify_body">Hauk deelt uw locatie op %s</string>
     <string name="progress_connect_body">Verbinden met Hauk…</string>
-    <string name="progress_adopt_title">Adopteren</string>
-    <string name="progress_adopt_body">Adopteren van %s…</string>
+    <!-- Removed progress_adopt_title -->
+    <!-- <string name="progress_adopt_title">Adopteren</string> -->
+    <!-- Removed progress_adopt_body -->
+    <!-- <string name="progress_adopt_body">Adopteren van %s…</string> -->
     <string name="progress_new_link_title">Link creëren</string>
     <string name="progress_new_link_body">Nieuwe deel link aan het creëren…</string>
     <string name="err_client">Ongeldige instellingen</string>
@@ -64,19 +79,22 @@
     <string name="ok_title">Verbinding gemaakt</string>
     <string name="ended_title">Delen beëindigd</string>
     <string name="ended_message">Uw locatiedeling is beëindigd.</string>
-    <string name="adopted_title">Locatiedeling geadopteerd</string>
-    <string name="adopted_body">%s is toegevoegd aan uw groepsdeling!</string>
+    <!-- Removed adopted_title -->
+    <!-- <string name="adopted_title">Locatiedeling geadopteerd</string> -->
+    <!-- Removed adopted_body -->
+    <!-- <string name="adopted_body">%s is toegevoegd aan uw groepsdeling!</string> -->
     <string name="resume_title">Sessie hervatten</string>
     <string name="req_perms_title">Toestemming vereist</string>
     <string name="link_added_title">Link gecreëerd</string>
     <string name="req_perms_message">Deze app vereist toegang tot uw locatie om te functioneren, maar deze toestemming is nog niet verleend. Sta alstublieft het volgende toestemmingsverzoek toe, en klik daarna op de startknop om het opnieuw te proberen.</string>
-    <string name="explain_adopt_body">Hauk staat u toe om locatiedelingssessies aan te maken voor uzelf alsook voor een groep. Als iemand een groepsdeling aanmaakt, krijgen zij een groepscode die anderen kunnen gebruiken om aan de groepssessie deel te nemen. 
+    <!-- Removed explain_adopt_body -->
+    <!-- <string name="explain_adopt_body">Hauk staat u toe om locatiedelingssessies aan te maken voor uzelf alsook voor een groep. Als iemand een groepsdeling aanmaakt, krijgen zij een groepscode die anderen kunnen gebruiken om aan de groepssessie deel te nemen. 
 \n 
 \nMaar de persoon die de groep aanmaakt, krijgt ook een optie om anderen die reeds hun locatie delen toe te voegen aan de groep. Dit proces heet \"adoptie\". 
 \n 
 \nU kunt zelf bepalen of anderen uw locatiedeling mogen toevoegen aan een groep of niet middels deze checkbox. 
 \n 
-\nAls u deze optie aanzet en uw locatie deelt met vrienden of iemand die zijn locatie ook wilt delen, dan kunnen zij een groep aanmaken en uw locatie toevoegen aan de groep. Dan kunnen jullie elkaar op dezelfde gedeelde kaart zien. Dit is bijvoorbeeld handig als u aan het rijden bent, omdat u dan niet zelf uw telefoon hoeft te gebruiken om aan een groep deel te nemen.</string>
+\nAls u deze optie aanzet en uw locatie deelt met vrienden of iemand die zijn locatie ook wilt delen, dan kunnen zij een groep aanmaken en uw locatie toevoegen aan de groep. Dan kunnen jullie elkaar op dezelfde gedeelde kaart zien. Dit is bijvoorbeeld handig als u aan het rijden bent, omdat u dan niet zelf uw telefoon hoeft te gebruiken om aan een groep deel te nemen.</string> -->
     <string name="battery_savings_title">Agressieve batterijbesparingen</string>
     <string name="manufacturer_huawei">Hauwei</string>
     <string name="manufacturer_oneplus">OnePlus</string>
@@ -99,7 +117,8 @@
     <string name="err_malformed_url">De ingevoerde server URL is ongeldig.</string>
     <string name="link_added_body">Een nieuwe link is succesvol aangemaakt voor uw locatiedeling! Klik op de deel knop om de publiek bekijkbare URL voor uw nieuwe deling te kopiëren.</string>
     <string name="label_heading_links">Momenteel actieve links</string>
-    <string name="sel_mode_opt_join_group">Neem deel aan een groepsdeling</string>
+    <!-- Removed sel_mode_opt_join_group -->
+    <!-- <string name="sel_mode_opt_join_group">Neem deel aan een groepsdeling</string> -->
     <string name="label_status_wait">Wachten op initiële GNSS fix…</string>
     <string name="err_location_disabled">Locatiediensten zijn uitgeschakeld. Schakel alstublieft locatiediensten in om uw locatie te delen.</string>
     <string name="battery_savings_body">Het lijkt erop dat u een apparaat van %s gebruikt. Deze apparaten hebben bijzonder strikte batterijbesparingsinstellingen die kunnen voorkomen dat Hauk in de achtergrond locatieupdates kan sturen.
@@ -114,7 +133,7 @@
     <string name="night_mode_system">Volg systeemvoorkeur</string>
     <string name="prefs_nightMode_title">Nacht-modus</string>
     <string name="prefs_header_appearance">Uiterlijk</string>
-    <string name="tls_validation_none_for_onion">Trust anchor en hostnaam validatie voor .onion hosts uitschakelen (niet aanbevolen)</string>
+    <!-- Removed tls_validation_none_for_onion -->
     <string name="tls_validation_no_anchor_onion">Trust anchor validatie voor .onion hosts uitschakelen (niet aanbevolen)</string>
     <string name="tls_validation_all">Certificaten altijd valideren (aanbevolen)</string>
     <string name="pref_tlsCertValidation_title">HTTPS certificaat validatie</string>
@@ -157,7 +176,8 @@
     <string name="prefs_header_about">Over Hauk</string>
     <string name="pref_noGnssFallback_title">Terugvallen op locatiebepaling via netwerk wanneer GNSS niet beschikbaar is (seconden)</string>
     <string name="pref_minUpdateDistance_title">Minimale afstand tussen updates (in meters)</string>
-    <string name="err_no_nickname">Je moet eerst een nickname instellen voordat je lid kan worden van een groep. Stel een nickname is en probeer het opnieuw.</string>
+    <!-- Removed err_no_nickname -->
+    <!-- <string name="err_no_nickname">Je moet eerst een nickname instellen voordat je lid kan worden van een groep. Stel een nickname is en probeer het opnieuw.</string> -->
     <string name="err_invalid_duration">De opgegeven duratie is ongeldig. Geef een nieuwe duratie op.</string>
     <string name="btn_remember">Niet opnieuw tonen</string>
 </resources>

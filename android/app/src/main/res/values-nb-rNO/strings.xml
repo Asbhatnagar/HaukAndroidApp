@@ -6,24 +6,30 @@
     <string name="label_allow_adopt">Tillat adopsjon:</string>
     <string name="label_explain_adopt">(Hva er dette\?)</string>
     <string name="label_nickname">Kallenavn:</string>
-    <string name="label_pin">Gruppekode:</string>
+    <!-- Removed label_pin -->
+    <!-- <string name="label_pin">Gruppekode:</string> -->
     <string name="label_status">Status:</string>
-    <string name="label_share_url">Delings-ID/link:</string>
+    <!-- Removed label_share_url -->
+    <!-- <string name="label_share_url">Delings-ID/link:</string> -->
     <string name="btn_start">Start deling</string>
     <string name="btn_stop">Stopp deling [%s]</string>
-    <string name="btn_adopt">Slå sammen en eksisterende link</string>
+    <!-- Removed btn_adopt -->
+    <!-- <string name="btn_adopt">Slå sammen en eksisterende link</string> -->
     <string name="btn_stop_short">Stopp</string>
     <string name="btn_share_short">Del</string>
     <string name="label_heading_links">Aktive delinger</string>
     <string name="link_type_solo">Bare deg</string>
-    <string name="link_type_group_host">Gruppedeling (leder)</string>
+    <!-- Removed link_type_group_host -->
+    <!-- <string name="link_type_group_host">Gruppedeling (leder)</string> -->
     <string name="label_status_none">Lokasjonsdeling inaktiv</string>
     <string name="label_status_wait">Venter på første GNSS-posisjon…</string>
     <string name="label_status_coarse">Venter på nøyaktig posisjon…</string>
     <string name="label_status_ok">Lokasjonsdeling aktiv!</string>
     <string name="explain_adopt_title">Delingsadopsjon</string>
-    <string name="adopt_title">Adoptér en annens sesjon</string>
-    <string name="adopt_body">Du kan adoptere en annen persons sesjon for å innlemme ham/henne i denne gruppen. Lim inn linken eller delings-IDen til den personen du ønsker å adoptere (f.eks. %s\?XXXX-XXXX) og tildel ham/henne et kallenavn.</string>
+    <!-- Removed adopt_title -->
+    <!-- <string name="adopt_title">Adoptér en annens sesjon</string> -->
+    <!-- Removed adopt_body -->
+    <!-- <string name="adopt_body">Du kan adoptere en annen persons sesjon for å innlemme ham/henne i denne gruppen. Lim inn linken eller delings-IDen til den personen du ønsker å adoptere (f.eks. %s\?XXXX-XXXX) og tildel ham/henne et kallenavn.</string> -->
     <string name="create_link_title">Lag en ny delingslink</string>
     <string name="create_link_body">Du kan lage flere delingslinker som andre kan bruke til å få tilgang til den delte posisjonen din. Hver link kan stoppes individuelt, noe som gir deg detaljert kontroll over hvem som kan se posisjonen din til enhver tid.
 \n
@@ -39,8 +45,10 @@
     <string name="notify_body">Hauk deler posisjonen din til %s</string>
     <string name="progress_connect_title">Kobler til</string>
     <string name="progress_connect_body">Kobler til Hauk…</string>
-    <string name="progress_adopt_title">Adopterer</string>
-    <string name="progress_adopt_body">Adopterer %s…</string>
+    <!-- Removed progress_adopt_title -->
+    <!-- <string name="progress_adopt_title">Adopterer</string> -->
+    <!-- Removed progress_adopt_body -->
+    <!-- <string name="progress_adopt_body">Adopterer %s…</string> -->
     <string name="progress_new_link_title">Oppretter link</string>
     <string name="progress_new_link_body">Oppretter en ny delingslink…</string>
     <string name="err_client">Ugyldige innstillinger</string>
@@ -52,28 +60,36 @@
     <string name="err_response_code">Mottok HTTP %s fra serveren!</string>
     <string name="pref_cryptServer_title">Serveradresse</string>
     <string name="pref_interval_title">Intervall (sekunder)</string>
-    <string name="label_mode">Delingsmodus:</string>
+    <!-- Removed label_mode -->
+    <!-- <string name="label_mode">Delingsmodus:</string> -->
     <string name="chk_allow_adopt">La andre legge meg til i en delingsgruppe når jeg deler posisjonen min</string>
     <string name="btn_link">Lag en ny delingslink</string>
-    <string name="link_type_group_member">Gruppedeling (medlem)</string>
-    <string name="label_pin_head">DIN GRUPPEKODE:</string>
-    <string name="label_pin_help">Del denne koden med de andre i gruppen din for å la dem koble seg på og bli med i delingsgruppen</string>
-    <string name="explain_adopt_body">Hauk lar deg lage delingssesjoner for deg selv i tillegg til for grupper. Hvis noen lager en gruppe, får de en kode som andre kan bruke til å bli med på å dele posisjonen sin til gruppen. 
+    <!-- Removed link_type_group_member -->
+    <!-- <string name="link_type_group_member">Gruppedeling (medlem)</string> -->
+    <!-- Removed label_pin_head -->
+    <!-- <string name="label_pin_head">DIN GRUPPEKODE:</string> -->
+    <!-- Removed label_pin_help -->
+    <!-- <string name="label_pin_help">Del denne koden med de andre i gruppen din for å la dem koble seg på og bli med i delingsgruppen</string> -->
+    <!-- Removed explain_adopt_body -->
+    <!-- <string name="explain_adopt_body">Hauk lar deg lage delingssesjoner for deg selv i tillegg til for grupper. Hvis noen lager en gruppe, får de en kode som andre kan bruke til å bli med på å dele posisjonen sin til gruppen. 
 \n 
 \nPersonen som oppretter gruppen har også mulighet til å legge til andre som allerede deler posisjonen sin inn i gruppen. Denne prosessen kalles for adopsjon. 
 \n 
 \nDu kan bestemme om du ønsker å la andre innlemme deg i en gruppe ved å krysse av i denne boksen. 
 \n 
-\nHvis du aktiverer dette og deler posisjonen din med en gjeng med venner, og noen andre i gjengen også ønsker å dele posisjonen sin, kan de opprette en delingsgruppe og legge deg til på kartet sitt, slik at dere begge dukker opp på samme kart. Dette kan være nyttig hvis du f.eks. kjører bil og ikke kan bruke telefonen din, siden adopsjon av den delte posisjonen din av andre ikke krever noen handling fra deg.</string>
+\nHvis du aktiverer dette og deler posisjonen din med en gjeng med venner, og noen andre i gjengen også ønsker å dele posisjonen sin, kan de opprette en delingsgruppe og legge deg til på kartet sitt, slik at dere begge dukker opp på samme kart. Dette kan være nyttig hvis du f.eks. kjører bil og ikke kan bruke telefonen din, siden adopsjon av den delte posisjonen din av andre ikke krever noen handling fra deg.</string> -->
     <string name="err_location_disabled">Stedstjenester er deaktivert. Vennligst aktiver høynøyaktighetsposisjonstjenester for å dele posisjonen din.</string>
     <string name="err_outdated">Serveren er utdatert</string>
-    <string name="err_ver_group" formatted="false">Serveren støtter ikke delingsgrupper. Delingsgrupper støttes i versjon %s og høyere; serveren kjører nå versjon %s. Delingen din ble omgjort til en én-persons-sesjon.</string>
+    <!-- Removed err_ver_group -->
+    <!-- <string name="err_ver_group" formatted="false">Serveren støtter ikke delingsgrupper. Delingsgrupper støttes i versjon %s og høyere; serveren kjører nå versjon %s. Delingen din ble omgjort til en én-persons-sesjon.</string> -->
     <string name="ok_title">Oppkobling vellykket</string>
     <string name="ok_message">Posisjonen din blir delt! Klikk på del-knappen for å kopiere visningslinken for delingen din.</string>
     <string name="ended_title">Deling avsluttet</string>
     <string name="ended_message">Sesjonen din er avsluttet.</string>
-    <string name="adopted_title">Deling adoptert</string>
-    <string name="adopted_body">%s ble lagt til i gruppen din!</string>
+    <!-- Removed adopted_title -->
+    <!-- <string name="adopted_title">Deling adoptert</string> -->
+    <!-- Removed adopted_body -->
+    <!-- <string name="adopted_body">%s ble lagt til i gruppen din!</string> -->
     <string name="resume_title">Gjenoppta sesjon</string>
     <string name="resume_body" formatted="false">Du har en påbegynt sesjon som ikke er avsluttet:
 
@@ -87,14 +103,17 @@ Utløper: %s
     <string name="req_perms_message">Denne appen krever tilgang til stedstjenester for å fungere, men denne tilgangen har ikke blitt gitt enda. Vennligst godta følgende tilgangsforespørsel, og klikk på startknappen for å prøve på nytt.</string>
     <string name="share_via">Del Hauk-lenke via</string>
     <string name="share_subject">Følg posisjonen min på Hauk!</string>
-    <string name="sel_mode_opt_alone">Bare del min egen posisjon</string>
-    <string name="sel_mode_opt_create_group">Lag en delingsgruppe</string>
+    <!-- Removed sel_mode_opt_alone -->
+    <!-- <string name="sel_mode_opt_alone">Bare del min egen posisjon</string> -->
+    <!-- Removed sel_mode_opt_create_group -->
+    <!-- <string name="sel_mode_opt_create_group">Lag en delingsgruppe</string> -->
     <string name="sel_unit_opt_minutes">minutt(er)</string>
     <string name="sel_unit_opt_hours">time(r)</string>
     <string name="sel_unit_opt_days">dag(er)</string>
-    <string name="sel_mode_opt_join_group">Bli med i en delingsgruppe</string>
+    <!-- Removed sel_mode_opt_join_group -->
+    <!-- <string name="sel_mode_opt_join_group">Bli med i en delingsgruppe</string> -->
     <string name="authorize_question">Ønsker du å tillate at delingssesjoner kan startes fra kringkastinger med denne identifikasjonen ved senere anledninger\?</string>
-    <string name="authorize_body">Hauk mottok og blokkerte et forsøk på å starte en delingssesjon fra en kringkastingskilde som identifiserte seg som</string>
+    <string name="authorize_body">Hauk mottok og blokkerte et forsøk på å starte en delingssesjon fra en kringkastingskilde som identifiserte sig som</string>
     <string name="authorize_header">Godkjenningsforespørsel</string>
     <string name="battery_savings_title">Aggressiv batterisparing</string>
     <string name="battery_savings_body">Det ser ut til at du bruker en %s-enhet. Disse enhetene har særlig strenge batterisparingsinnstillinger som kan hindre Hauk fra å sende posisjonsoppdateringer mens programmet kjører i bakgrunnen.
@@ -131,7 +150,6 @@ Utløper: %s
     <string name="pref_proxyPort_title">Proxy-port</string>
     <string name="pref_proxyHost_title">Proxy-vertsnavn</string>
     <string name="pref_proxyType_title">Proxy</string>
-    <string name="tls_validation_none_for_onion">Deaktiver sertifikatkjede- og vertsnavnvalidering for .onion-verter (ikke anbefalt)</string>
     <string name="tls_validation_no_anchor_onion">Deaktiver sertifikatkjedevalidering for .onion-verter (ikke anbefalt)</string>
     <string name="tls_validation_all">Alltid valider sertifikater (anbefalt)</string>
     <string name="pref_tlsCertValidation_title">HTTPS-sertifikatvalidering</string>
@@ -151,7 +169,8 @@ Utløper: %s
     <string name="pref_confirmStop_on">Be om bekreftelse når du stopper delinger i appen</string>
     <string name="pref_confirmStop_title">Bekreft før delinger avsluttes</string>
     <string name="pref_minUpdateDistance_title">Minste avstand mellom oppdateringer (meter)</string>
-    <string name="err_no_nickname">Du må stille inn et kallenavn før du kan bli med i delingsgrupper. Vennligst velg et kallenavn og prøv igjen.</string>
+    <!-- Removed err_no_nickname -->
+    <!-- <string name="err_no_nickname">Du må stille inn et kallenavn før du kan bli med i delingsgrupper. Vennligst velg et kallenavn og prøv igjen.</string> -->
     <string name="err_invalid_duration">Varigheten du skrev inn er ugyldig. Vennligst skriv inn en annen varighet.</string>
     <string name="btn_remember">Ikke vis igjen</string>
     <string name="dialog_confirm_stop_share">Er du sikker på at du vil slette denne linken\?</string>

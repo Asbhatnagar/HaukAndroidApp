@@ -126,8 +126,8 @@
             app:key="hideLogo"
             app:icon="@drawable/ic_image"
             app:title="@string/prefs_hideLogo_title"
-            app:summaryOff="@string/pref_hideLogo_off"
-            app:summaryOn="@string/pref_hideLogo_on" />
+            app:summaryOff="Show logo"
+            app:summaryOn="Hide logo" />
 
     </PreferenceCategory>
 

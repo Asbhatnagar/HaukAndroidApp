@@ -11,9 +11,8 @@ import info.varden.hauk.R;
  */
 public enum ShareMode implements Serializable {
 
-    CREATE_ALONE(0, R.string.link_type_solo),
-    CREATE_GROUP(1, R.string.link_type_group_host),
-    JOIN_GROUP(2, R.string.link_type_group_member);
+    CREATE_ALONE(0, R.string.link_type_solo);
+    // CREATE_GROUP and JOIN_GROUP removed
 
     /**
      * Resolves a sharing mode by its index.
@@ -26,6 +25,7 @@ public enum ShareMode implements Serializable {
         for (ShareMode mode : ShareMode.values()) {
             if (mode.getIndex() == index) return mode;
         }
+        // This will now only work for index 0. Other indices will correctly throw.
         throw new EnumConstantNotPresentException(ShareMode.class, "index=" + index);
     }
 
@@ -58,9 +58,10 @@ public enum ShareMode implements Serializable {
 
     /**
      * Returns whether or not this sharing mode is a group share variant.
+     * With group shares removed, this will always be false.
      */
     public boolean isGroupType() {
-        return this == CREATE_GROUP || this == JOIN_GROUP;
+        return false; // Simplified as only CREATE_ALONE remains
     }
 
     public int getDescriptorResource() {

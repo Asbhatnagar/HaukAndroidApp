@@ -13,7 +13,7 @@ import info.varden.hauk.utils.Log;
  * @see MainActivity
  * @author Marius Lindvall
  */
-final class StopSharingUICallback implements StopSharingCallback {
+public final class StopSharingUICallback implements StopSharingCallback { // Changed to public
     /**
      * Android application context.
      */

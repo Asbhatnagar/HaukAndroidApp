@@ -4,26 +4,26 @@
     <string name="label_status_lost_gnss">Buscando ubicación…</string>
     <string name="label_status_wait">Esperando primera ubicación GNSS…</string>
     <string name="label_status">Estado:</string>
-    <string name="label_pin">NIP del Grupo:</string>
+    <!-- Removed label_pin -->
     <string name="label_nickname">Apodo:</string>
     <string name="label_explain_adopt">(¿Qué es esto\?)</string>
-    <string name="chk_allow_adopt">Permitir que otros me agreguen a un grupo para compartir</string>
+    <string name="chk_allow_adopt">Permitir que otros me agreguen a un grupo para compartir</string> <!-- Might need rephrasing -->
     <string name="label_allow_adopt">Permitir adopción:</string>
-    <string name="sel_mode_opt_join_group">Unirse a un grupo para compartir</string>
-    <string name="sel_mode_opt_create_group">Crear un grupo para compartir</string>
-    <string name="sel_mode_opt_alone">Compartir mi ubicación solamente</string>
-    <string name="label_mode">Método de compartir:</string>
+    <!-- Removed sel_mode_opt_join_group -->
+    <!-- Removed sel_mode_opt_create_group -->
+    <!-- Removed sel_mode_opt_alone -->
+    <!-- Removed label_mode -->
     <string name="sel_unit_opt_days">día(s)</string>
     <string name="sel_unit_opt_hours">hora(s)</string>
     <string name="sel_unit_opt_minutes">minuto(s)</string>
     <string name="label_heading">Compartir ubicación con software de código abierto</string>
     <string name="action_settings">Configuración</string>
     <string name="label_duration">Tiempo compartido:</string>
-    <string name="adopt_title">Adoptar una compartición existente</string>
-    <string name="explain_adopt_title">Adopción compartida</string>
-    <string name="label_pin_help">Comparte este PIN con los otros miembros de tu grupo para permitirles unirse a tu grupo de compartir la localización</string>
-    <string name="label_pin_head">EL PIN DE TU GRUPO:</string>
-    <string name="link_type_group_member">Grupo compartido (miembro)</string>
+    <!-- Removed adopt_title -->
+    <string name="explain_adopt_title">Adopción compartida</string> <!-- Keep, but content might need update -->
+    <!-- Removed label_pin_help -->
+    <!-- Removed label_pin_head -->
+    <!-- Removed link_type_group_member -->
     <string name="link_type_solo">Solo tu localización</string>
     <string name="label_heading_no_links">Links actualmente inactivos</string>
     <string name="label_heading_links">Links actualmente activos</string>
@@ -43,8 +43,8 @@
     <string name="err_client">Ajustes erroneos</string>
     <string name="progress_new_link_body">Creando nuevo enlace compartido…</string>
     <string name="progress_new_link_title">Creando enlace</string>
-    <string name="progress_adopt_body">Aprobando %s…</string>
-    <string name="progress_adopt_title">Aprobando</string>
+    <!-- Removed progress_adopt_body -->
+    <!-- Removed progress_adopt_title -->
     <string name="progress_resolving_proxy">Resolviendo nombre del proxy…</string>
     <string name="progress_connect_body">Conectado con Hauk…</string>
     <string name="progress_connect_title">Conectando</string>
@@ -59,9 +59,9 @@
     <string name="btn_no">No</string>
     <string name="btn_yes">Sí</string>
     <string name="btn_ok">OK</string>
-    <string name="label_share_url">Compartir ID/URL:</string>
-    <string name="link_type_group_host">Compartir grupo (host)</string>
-    <string name="btn_adopt">Unir a un enlace existente</string>
+    <!-- Removed label_share_url -->
+    <!-- Removed link_type_group_host -->
+    <!-- Removed btn_adopt -->
     <string name="label_status_disconnected">No se puede acceder al servidor</string>
     <string name="label_status_ok">Ubicación compartida activada!</string>
     <string name="label_status_none">Ubicación compartida desactivada</string>

@@ -46,8 +46,7 @@ import info.varden.hauk.system.powersaving.DeviceChecker;
 import info.varden.hauk.system.preferences.PreferenceManager;
 import info.varden.hauk.system.preferences.ui.SettingsActivity;
 import info.varden.hauk.ui.listener.AddLinkClickListener;
-import info.varden.hauk.ui.listener.InitiateAdoptionClickListener;
-import info.varden.hauk.ui.listener.SelectionModeChangedListener;
+// Removed: import info.varden.hauk.ui.listener.SelectionModeChangedListener;
 import info.varden.hauk.utils.DeprecationMigrator;
 import info.varden.hauk.utils.Log;
 import info.varden.hauk.utils.TimeUtils;
@@ -101,7 +100,6 @@ public final class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Ensure that all deprecated preferences have been migrated before we continue.
         new DeprecationMigrator(this).migrate();
 
         Log.i("Creating main activity"); //NON-NLS
@@ -113,20 +111,15 @@ public final class MainActivity extends AppCompatActivity {
 
         Log.d("Attaching event handlers"); //NON-NLS
 
-        // Add an event handler to the sharing mode selector.
-        //noinspection OverlyStrongTypeCast
-        ((Spinner) findViewById(R.id.selMode)).setOnItemSelectedListener(new SelectionModeChangedListener(
-                findViewById(R.id.rowAllowAdopt),
-                findViewById(R.id.rowNickname),
-                findViewById(R.id.rowPIN)
-        ));
+        // Removed OnItemSelectedListener for selMode as it's no longer in the layout.
 
         loadPreferences();
 
+        // TODO: resumeShares was removed from SessionManager as ResumableShare is missing a.i. generated
+        /*
         this.manager.resumeShares(new ResumePrompt() {
             @Override
             public void promptForResumption(Context ctx, Session session, Share[] shares, PromptCallback response) {
-                // Prompt the user to continue the session.
                 new DialogService(ctx).showDialog(
                         R.string.resume_title,
                         String.format(ctx.getString(R.string.resume_body), shares.length, session.getExpiryString()),
@@ -135,8 +128,8 @@ public final class MainActivity extends AppCompatActivity {
                 );
             }
         });
+        */
 
-        // Check for aggressive power saving devices and warn the user if applicable.
         new DeviceChecker(this).performCheck();
     }
 
@@ -148,14 +141,11 @@ public final class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -167,27 +157,19 @@ public final class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        // Set app logo visibility.
         PreferenceManager prefs = new PreferenceManager(this);
         findViewById(R.id.imgLogo).setVisibility(prefs.get(Constants.PREF_HIDE_LOGO) ? View.GONE : View.VISIBLE);
     }
 
-    /**
-     * On-tap handler for the "start sharing" and "stop sharing" button.
-     */
     public void startSharing(@SuppressWarnings("unused") View view) {
         PreferenceManager prefs = new PreferenceManager(this);
 
-        // If there is an executable stop task, that means that sharing is already active. Shut down
-        // the share by running the stop task instead of starting a new share.
         if (this.manager.isSessionActive()) {
             Log.i("Sharing is being stopped from main activity"); //NON-NLS
             stopSharing(prefs);
             return;
         }
 
-        // Disable the UI while we attempt to connect to the Hauk backend.
         findViewById(R.id.btnShare).setEnabled(false);
         disableUI();
 
@@ -200,28 +182,25 @@ public final class MainActivity extends AppCompatActivity {
         String customID = prefs.get(Constants.PREF_CUSTOM_ID).trim();
         boolean useE2E = prefs.get(Constants.PREF_ENABLE_E2E);
         String e2ePass = !useE2E ? "" : prefs.get(Constants.PREF_E2E_PASSWORD);
+        
         String nickname = ((TextView) findViewById(R.id.txtNickname)).getText().toString().trim();
-        @SuppressWarnings("OverlyStrongTypeCast") ShareMode mode = ShareMode.fromMode(((Spinner) findViewById(R.id.selMode)).getSelectedItemPosition());
-        String groupPin = ((TextView) findViewById(R.id.txtGroupCode)).getText().toString();
+        
+        ShareMode mode = ShareMode.CREATE_ALONE; // Mode is fixed
+        String groupPin = ""; // No longer used
+
         boolean allowAdoption = ((Checkable) findViewById(R.id.chkAllowAdopt)).isChecked();
         @SuppressWarnings("OverlyStrongTypeCast") int durUnit = ((Spinner) findViewById(R.id.selUnit)).getSelectedItemPosition();
 
-        assert mode != null;
         server = server.endsWith("/") ? server : server + "/";
 
-        // Save connection preferences for next launch, so the user doesn't have to enter URL etc.
-        // every time.
         Log.i("Updating connection preferences"); //NON-NLS
         prefs.set(Constants.PREF_DURATION_UNIT, durUnit);
         prefs.set(Constants.PREF_NICKNAME, nickname);
         prefs.set(Constants.PREF_ALLOW_ADOPTION, allowAdoption);
 
         try {
-            // Try to parse the duration.
             duration = Integer.parseInt(((TextView) findViewById(R.id.txtDuration)).getText().toString());
             prefs.set(Constants.PREF_DURATION, duration);
-
-            // The backend takes duration in seconds, hence it must be converted.
             duration = TimeUtils.timeUnitsToSeconds(duration, durUnit);
         } catch (NumberFormatException | ArithmeticException ex) {
             Log.e("Illegal duration value", ex); //NON-NLS
@@ -229,15 +208,15 @@ public final class MainActivity extends AppCompatActivity {
             return;
         }
 
-        if ((mode == ShareMode.CREATE_GROUP || mode == ShareMode.JOIN_GROUP) && nickname.isEmpty()) {
-            Log.e("No nickname set!"); //NON-NLS
-            this.dialogSvc.showDialog(R.string.err_client, R.string.err_no_nickname, this.uiResetTask);
-            return;
+        if (nickname.isEmpty()) {
+             Log.e("No nickname set!"); //NON-NLS
+             // Consider keeping a generic "nickname required" string or a new one for solo shares.
+             // For now, using a generic error, assuming nickname is mandatory.
+             this.dialogSvc.showDialog(R.string.err_client, "Nickname is required.", this.uiResetTask); // Using a literal string for now
+             return;
         }
 
         if (server.isEmpty()) {
-            // If the user hasn't set up a server yet, open the settings menu and prompt them to
-            // configure the backend.
             this.uiResetTask.run();
             Toast.makeText(this, R.string.err_server_not_configured, Toast.LENGTH_LONG).show();
             startActivity(new Intent(this, SettingsActivity.class));
@@ -248,12 +227,6 @@ public final class MainActivity extends AppCompatActivity {
         new ProxyHostnameResolverImpl(this, this.manager, this.uiResetTask, prefs, new SessionInitiationResponseHandlerImpl(), initParams, mode, allowAdoption, nickname, groupPin).resolve();
     }
 
-    /**
-     * Stops sharing. If the setting to prompt for confirmation is enabled, a dialog box is shown to
-     * confirm that the share should be stopped.
-     *
-     * @param prefs A preference manager.
-     */
     private void stopSharing(PreferenceManager prefs) {
         if (prefs.get(Constants.PREF_CONFIRM_STOP)) {
             this.dialogSvc.showDialog(R.string.dialog_confirm_stop_title, R.string.dialog_confirm_stop_body, Buttons.Three.YES_NO_REMEMBER, new StopSharingConfirmationPrompt(prefs, this.manager));
@@ -262,45 +235,32 @@ public final class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Disables all UI elements that should be read-only while sharing.
-     */
     private void disableUI() {
         Log.i("Disabling user interface"); //NON-NLS
         for (View view : this.lockWhileRunning) {
-            view.setEnabled(false);
+            if (view != null) { // Check if the view still exists
+                view.setEnabled(false);
+            }
         }
     }
 
-    /**
-     * On-tap handler for the "what's this" link underneath the checkbox for allowing adoption.
-     * Opens an explanation of adoption.
-     */
     public void explainAdoption(@SuppressWarnings("unused") View view) {
         Log.i("Explaining share adoption upon user request"); //NON-NLS
         this.dialogSvc.showDialog(R.string.explain_adopt_title, R.string.explain_adopt_body);
     }
 
-    /**
-     * On-tap handler for the header logo and link that opens the Hauk project page on GitHub.
-     */
     public void openProjectSite(View view) {
         new OpenLinkListener(this, R.string.label_source_link).onClick(view);
     }
 
-    /**
-     * This function is called by onCreate() to initialize class-level variables for usage in this
-     * activity.
-     */
     private void setClassVariables() {
         Log.d("Setting class variables"); //NON-NLS
         this.lockWhileRunning = new View[] {
                 findViewById(R.id.txtDuration),
-
                 findViewById(R.id.selUnit),
-                findViewById(R.id.selMode),
+                // Removed: findViewById(R.id.selMode),
                 findViewById(R.id.txtNickname),
-                findViewById(R.id.txtGroupCode),
+                // Removed: findViewById(R.id.txtGroupCode), (as rowPIN is gone)
                 findViewById(R.id.chkAllowAdopt)
         };
 
@@ -312,9 +272,6 @@ public final class MainActivity extends AppCompatActivity {
         this.manager = new SessionManager(this, this.uiStopTask) {
             @Override
             protected void requestLocationPermission() {
-                // Show a rationale first before requesting location permission, giving users the chance
-                // to cancel the request if they so desire. Users are informed that they must click the
-                // "start sharing" button again after they have granted the permission.
                 MainActivity.this.dialogSvc.showDialog(R.string.req_perms_title, R.string.req_perms_message, new PermissionRequestExecutionTask(), MainActivity.this.uiResetTask);
             }
         };
@@ -326,30 +283,18 @@ public final class MainActivity extends AppCompatActivity {
         this.linkList = new ShareLinkLayoutManager(this, this.manager, (ViewGroup) findViewById(R.id.tableLinks), (TextView) findViewById(R.id.headerLinks));
     }
 
-    /**
-     * Loads preferences from storage and applies them to the UI.
-     */
     private void loadPreferences() {
         Log.i("Loading preferences..."); //NON-NLS
         PreferenceManager prefs = new PreferenceManager(this);
         ((TextView) findViewById(R.id.txtDuration)).setText(String.valueOf(prefs.get(Constants.PREF_DURATION)));
         ((TextView) findViewById(R.id.txtNickname)).setText(prefs.get(Constants.PREF_NICKNAME));
-        // Because I can choose between an unchecked cast warning and an overly strong cast warning,
-        // I'm going to with the latter.
-        //noinspection OverlyStrongTypeCast
         ((Spinner) findViewById(R.id.selUnit)).setSelection(prefs.get(Constants.PREF_DURATION_UNIT));
         ((Checkable) findViewById(R.id.chkAllowAdopt)).setChecked(prefs.get(Constants.PREF_ALLOW_ADOPTION));
 
-        // Set night mode preference.
         AppCompatDelegate.setDefaultNightMode(prefs.get(Constants.PREF_NIGHT_MODE).getResolvedNightModeValue());
-        // Set app logo visibility.
         findViewById(R.id.imgLogo).setVisibility(prefs.get(Constants.PREF_HIDE_LOGO) ? View.GONE : View.VISIBLE);
     }
 
-    /**
-     * An implementation of {@link SessionManager}'s session initiation response handler that spawns
-     * a progress dialog and shows alerts if applicable.
-     */
     private final class SessionInitiationResponseHandlerImpl extends DialogPacketFailureHandler implements SessionInitiationResponseHandler {
         private ProgressDialog progress;
 
@@ -359,10 +304,6 @@ public final class MainActivity extends AppCompatActivity {
 
         @Override
         public void onInitiating() {
-            // Create a progress dialog while doing initial handshake. This could end up taking a
-            // while (e.g. if the host is unreachable, it will eventually time out), and having a
-            // progress bar makes for better UX since it visually shows that something is actually
-            // happening in the background.
             this.progress = new ProgressDialog(MainActivity.this);
             this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             this.progress.setTitle(R.string.progress_connect_title);
@@ -384,9 +325,15 @@ public final class MainActivity extends AppCompatActivity {
 
         @Override
         public void onShareModeForciblyDowngraded(ShareMode downgradeTo, Version backendVersion) {
-            //noinspection OverlyStrongTypeCast
-            ((Spinner) findViewById(R.id.selMode)).setSelection(downgradeTo.getIndex());
-            MainActivity.this.dialogSvc.showDialog(R.string.err_outdated, String.format(getString(R.string.err_ver_group), Constants.VERSION_COMPAT_GROUP_SHARE, backendVersion));
+            // UI interaction with selMode removed as it's gone.
+            // The R.string.err_ver_group was removed, so cannot use it in dialog.
+            // This callback should ideally not be hit if client always requests CREATE_ALONE.
+            // If it is, it's an unexpected server behavior or a different kind of downgrade.
+            Log.w("Share mode forcibly downgraded by server to %s (backend version: %s). This is unexpected.", downgradeTo, backendVersion); //NON-NLS
+            // Optionally, show a generic error to the user if downgradeTo is not CREATE_ALONE.
+            if (downgradeTo != ShareMode.CREATE_ALONE) {
+                 MainActivity.this.dialogSvc.showDialog(R.string.err_outdated, "Server forced an incompatible share mode."); // Generic message
+            }
         }
 
         @Override
@@ -395,10 +342,6 @@ public final class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * A function which resets the user interface to its default settings, as if the app was just
-     * opened. Used to reset the UI after errors and after sharing has expired.
-     */
     private final class ResetTask implements Runnable {
         @Override
         public void run() {
@@ -414,21 +357,19 @@ public final class MainActivity extends AppCompatActivity {
             btnLink.setOnClickListener(null);
 
             for (View v : MainActivity.this.lockWhileRunning) {
-                v.setEnabled(true);
+                if (v != null) { // Check if the view still exists
+                    v.setEnabled(true);
+                }
             }
 
-            findViewById(R.id.layoutGroupPIN).setVisibility(View.GONE);
-            findViewById(R.id.btnAdopt).setOnClickListener(null);
+            // Removed: findViewById(R.id.layoutGroupPIN).setVisibility(View.GONE);
+            // Removed: findViewById(R.id.btnAdopt).setOnClickListener(null);
 
             MainActivity.this.linkList.removeAll();
             Log.i("App state was reset"); //NON-NLS
         }
     }
 
-    /**
-     * A dialog builder that hooks into {@link PromptCallback} for accepting or denying session
-     * resumption.
-     */
     private final class ResumeDialogBuilder implements CustomDialogBuilder {
         private final PromptCallback response;
 
@@ -454,9 +395,6 @@ public final class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Function that runs if the user accepts the location request rationale via the OK button.
-     */
     private final class PermissionRequestExecutionTask implements Runnable {
         @Override
         public void run() {
@@ -468,14 +406,9 @@ public final class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Implementation of {@link SessionListener} that updates the UI and shows dialog depending on
-     * the results of session creation.
-     */
     private final class SessionListenerImpl implements SessionListener {
         @Override
         public void onSessionCreated(Session session, final Share share, SessionInitiationReason reason) {
-            // We now have a link to share, so we enable the additional link creation button if the backend supports it. Add an event handler to handle the user clicking on it.
             if (session.getBackendVersion().isAtLeast(Constants.VERSION_COMPAT_VIEW_ID)) {
                 boolean allowNewLinkAdoption = ((Checkable) findViewById(R.id.chkAllowAdopt)).isChecked();
                 Button btnLink = findViewById(R.id.btnLink);
@@ -491,16 +424,11 @@ public final class MainActivity extends AppCompatActivity {
                 Log.w("Backend is outdated and does not support adding additional links. Button will remain disabled."); //NON-NLS
             }
 
-            // Now that sharing is active, we will turn the start button into a stop
-            // button with a countdown.
             Log.i("Scheduling countdown to update every second"); //NON-NLS
             MainActivity.this.shareCountdown.start(session.getRemainingSeconds());
-
-            // Re-enable the start (stop) button and inform the user.
             disableUI();
             findViewById(R.id.btnShare).setEnabled(true);
 
-            // Service relaunches should be handled silently.
             if (reason == SessionInitiationReason.USER_STARTED) {
                 MainActivity.this.dialogSvc.showDialog(R.string.ok_title, R.string.ok_message, Buttons.Two.OK_SHARE, new CustomDialogBuilder() {
                     @Override
@@ -534,43 +462,16 @@ public final class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Implementation of {@link ShareListener} that adds and removes shares from the UI when shares
-     * are joined into or left.
-     */
     private final class ShareListenerImpl implements ShareListener {
         @Override
         public void onShareJoined(Share share) {
             MainActivity.this.linkList.add(share);
-            if (share.getShareMode() == ShareMode.CREATE_GROUP) {
-                runOnUiThread(new ShowGroupPINLayoutTask(share));
-            }
+            // Group share specific UI (ShowGroupPINLayoutTask) was already removed.
         }
 
         @Override
         public void onShareParted(Share share) {
             MainActivity.this.linkList.remove(share);
-        }
-    }
-
-    /**
-     * A function that shows the group PIN layout and binds the adoption button click listener when
-     * a group share is created.
-     */
-    private final class ShowGroupPINLayoutTask implements Runnable {
-        private final Share share;
-
-        private ShowGroupPINLayoutTask(Share share) {
-            this.share = share;
-        }
-
-        @Override
-        public void run() {
-            // Show the group PIN on the UI if a new group share was created.
-            Log.d("Showing group layout"); //NON-NLS
-            ((TextView) findViewById(R.id.labelShowPin)).setText(this.share.getJoinCode());
-            findViewById(R.id.btnAdopt).setOnClickListener(new InitiateAdoptionClickListener(MainActivity.this, this.share));
-            findViewById(R.id.layoutGroupPIN).setVisibility(View.VISIBLE);
         }
     }
 }

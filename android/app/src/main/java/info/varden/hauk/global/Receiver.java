@@ -21,7 +21,7 @@ import info.varden.hauk.http.ConnectionParameters;
 import info.varden.hauk.http.SessionInitiationPacket;
 import info.varden.hauk.http.security.CertificateValidationPolicy;
 import info.varden.hauk.manager.SessionManager;
-import info.varden.hauk.struct.AdoptabilityPreference;
+// import info.varden.hauk.struct.AdoptabilityPreference; // a.i. generated
 import info.varden.hauk.system.LocationPermissionsNotGrantedException;
 import info.varden.hauk.system.LocationServicesDisabledException;
 import info.varden.hauk.system.preferences.PreferenceManager;
@@ -119,14 +119,14 @@ public final class Receiver extends BroadcastReceiver {
         // Create session initiation parameters.
         PreferenceManager prefs = new PreferenceManager(ctx);
         SessionInitiationPacket.InitParameters initParams = buildSessionParams(intent, prefs);
-        boolean adoptable = intent.hasExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT) ? intent.getBooleanExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT, true) : prefs.get(Constants.PREF_ALLOW_ADOPTION);
+        // boolean adoptable = intent.hasExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT) ? intent.getBooleanExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT, true) : prefs.get(Constants.PREF_ALLOW_ADOPTION); // TODO: AdoptabilityPreference removed a.i. generated
 
         SessionManager manager = new BroadcastSessionManager(ctx);
         manager.attachShareListener(new DisplayShareDialogListener(ctx));
         manager.attachStatusListener(new GNSSStatusUpdateListenerImpl(ctx));
 
         try {
-            manager.shareLocation(initParams, new SessionInitiationResponseHandlerImpl(ctx), adoptable ? AdoptabilityPreference.ALLOW_ADOPTION : AdoptabilityPreference.DISALLOW_ADOPTION);
+            manager.shareLocation(initParams, new SessionInitiationResponseHandlerImpl(ctx)); // TODO: AdoptabilityPreference removed a.i. generated
         } catch (LocationPermissionsNotGrantedException e) {
             Toast.makeText(ctx, R.string.err_missing_perms, Toast.LENGTH_LONG).show();
         } catch (LocationServicesDisabledException e) {
@@ -147,14 +147,14 @@ public final class Receiver extends BroadcastReceiver {
         // Create session initiation parameters.
         PreferenceManager prefs = new PreferenceManager(ctx);
         SessionInitiationPacket.InitParameters initParams = buildSessionParams(intent, prefs);
-        boolean adoptable = intent.hasExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT) ? intent.getBooleanExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT, true) : prefs.get(Constants.PREF_ALLOW_ADOPTION);
+        // boolean adoptable = intent.hasExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT) ? intent.getBooleanExtra(Constants.EXTRA_SESSION_ALLOW_ADOPT, true) : prefs.get(Constants.PREF_ALLOW_ADOPTION); // TODO: AdoptabilityPreference removed a.i. generated
 
         SessionManager manager = new BroadcastSessionManager(ctx);
         manager.attachShareListener(new ShareListenerImpl(ctx));
         manager.attachStatusListener(new GNSSStatusUpdateListenerImpl(ctx));
 
         try {
-            manager.shareLocation(initParams, new SessionInitiationResponseHandlerImpl(ctx), adoptable ? AdoptabilityPreference.ALLOW_ADOPTION : AdoptabilityPreference.DISALLOW_ADOPTION);
+            manager.shareLocation(initParams, new SessionInitiationResponseHandlerImpl(ctx)); // TODO: AdoptabilityPreference removed a.i. generated
         } catch (LocationPermissionsNotGrantedException e) {
             Toast.makeText(ctx, R.string.err_missing_perms, Toast.LENGTH_LONG).show();
         } catch (LocationServicesDisabledException e) {
